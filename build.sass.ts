@@ -30,3 +30,10 @@ globalThis.Bun.build({
     naming: '[name]-[hash].css',
     plugins: [style],
 });
+
+/* 
+TODO this does not currently work
+* error: 
+* // src/scss/main.scss
+* var main_default = "@charset 
+*/

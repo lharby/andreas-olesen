@@ -12,3 +12,11 @@
 - Add every conceivable post type for testing
 - Use grid layout for work pages
 - Check for analyitics (not Google)
+
+#### 15.01.25
+- Order for building files
+   - Run `bun run build:styles` - generates css file from scss imports
+   - Run `bun run build` - inlines JS to html template
+   - Run `node someReplace function` create a string replace method and run via node. 
+   - See if this can all be run via a watch command
+- Issue with Tumblr template (not valid HTML, handlebars, moustache etc).

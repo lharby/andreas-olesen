@@ -5,7 +5,10 @@ await Bun.build({
     outdir: './static',
     plugins: [
         html({
-            inline: {css: true, js: true}
+            inline: { 
+                css: true,
+                js: true
+            }
         })
     ],
 });

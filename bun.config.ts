@@ -1,5 +1,5 @@
 export default {
-    esm: true,  // Optional, depends on your project setup
+    esm: false,  // Optional, depends on your project setup
     plugins: [
       {
         name: 'sass',
