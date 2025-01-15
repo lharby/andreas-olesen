@@ -5,10 +5,10 @@ https://slackwise.org.uk
 2012 - present
 */
 
-@use './functions/variables.scss';
-// @use './functions/mixins.scss';
-// @use './functions/responsive.scss';
+@use 'functions/variables.scss';
+@use 'functions/mixins.scss';
+@use 'functions/responsive.scss';
 
-// @use './core/normalize.scss';
-// @use './core/layout.scss';
-// @use './core/utils';
+@use 'core/normalize.scss';
+@use 'core/layout.scss';
+@use 'core/utils';
