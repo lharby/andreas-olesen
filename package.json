@@ -1,9 +1,15 @@
 {
   "name": "andreas-olesen",
   "module": "index.js",
+  "author": "Luke Harby",
   "type": "module",
+  "scripts": {
+    "dev": "bun run --watch ./src/index.html",
+    "build": "bun run ./build.js"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "bun-plugin-html": "^2.2.6"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

@@ -1,0 +1,19 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+.hidden {
+    display: none !important;
+}
+
+.domHidden {
+    left: -9999px;
+    position: absolute;
+}
+
+.notVisible {
+    visibility: hidden;
+}

@@ -1,0 +1,39 @@
+/*
+Luke Harby
+slackwise LTD
+https: //slackwise.org.uk
+2012 - present
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: $white;
+
+    &.no-scroll {
+        overflow-y: hidden;
+    }
+}
+
+body {
+    @include hover(all, 100ms, ease-in);
+    color: $black;
+    background-color: orange;
+    font-family: $primary-font;
+    font-weight: 400;
+    line-height: initial !important;
+    margin: 0;
+    padding: 0;
+}
+
+a:link,
+a:visited,
+.button-href {
+    @include hover(all, 400ms, ease-in);
+    color: $black;
+    text-decoration: underline;
+}
