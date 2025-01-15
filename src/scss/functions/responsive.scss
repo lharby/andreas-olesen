@@ -5,6 +5,9 @@ https://slackwise.org.uk
 2012 - present
 */
 
+@use './variables' as vars;
+@use './mixins' as mixin;
+
 .desktopHidden {
     display: none;
 }
@@ -63,7 +66,7 @@ https://slackwise.org.uk
     width: 91.66666667%;
 }
 
-@include tablet($tablet-size) {
+@include mixin.tablet(vars.$tablet-size) {
 
     [class^='el'] {
         float: none;

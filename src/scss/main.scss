@@ -1,14 +1,7 @@
-/*
-Luke Harby
-slackwise LTD
-https://slackwise.org.uk
-2012 - present
-*/
+@use './functions/variables';
+@use './functions/mixins';
+@use './functions/responsive';
 
-@use 'functions/variables.scss';
-@use 'functions/mixins.scss';
-@use 'functions/responsive.scss';
-
-@use 'core/normalize.scss';
-@use 'core/layout.scss';
-@use 'core/utils';
+@use './core/normalize';
+@use './core/layout';
+@use './core/utils';

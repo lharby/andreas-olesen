@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "bun run --watch ./src/index.html",
     "build": "bun run ./build.ts",
-    "build:sass": "bun run ./build.sass.ts"
+    "build:sass": "bun run ./build.sass.ts",
+    "build:styles": "bun run sass ./src/scss/main.scss ./static/css/main.css --style compressed --charset"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -14,5 +15,8 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "sass": "^1.83.4"
   }
 }

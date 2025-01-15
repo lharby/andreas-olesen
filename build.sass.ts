@@ -1,6 +1,6 @@
 import type { BunPlugin } from 'bun';
 
-const root = './src';
+const src_dir = './src';
 const out_dir = './static';
 
 const style: BunPlugin = {
@@ -15,8 +15,6 @@ const style: BunPlugin = {
             const contents = sass.compile(path);
             const css = contents.css;
 
-            console.log('contents', contents);
-
             return {
                 loader: "text",
                 contents: css,
@@ -27,7 +25,7 @@ const style: BunPlugin = {
 
 // start build main.css
 globalThis.Bun.build({
-    entrypoints: [`${root}/scss/main.scss`],
+    entrypoints: [`${src_dir}/scss/main.scss`],
     outdir: `${out_dir}/css`,
     naming: '[name]-[hash].css',
     plugins: [style],
