@@ -57,9 +57,19 @@
             </ul>
         </nav>
     </header>
+    <img src="{PhotoURL-500}" />
     <main id="pageWrapper"><!-- pageWrapper -->
         <p>Output</p>
     </main>
-    <script src="./js/app.js"></script>
+    <script>// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/index.js
+var logger = () => {
+  console.log("JS available");
+};
+
+// src/js/app.js
+document.addEventListener("DOMContentLoaded", () => {
+  logger();
+});
+</script>
 </body>
 </html>
