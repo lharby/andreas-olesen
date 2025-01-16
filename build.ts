@@ -1,7 +1,7 @@
 import html from 'bun-plugin-html';
 
 await Bun.build({
-    entrypoints: ['./src/temp.html'],
+    entrypoints: ['./src/index-tmp.html'],
     outdir: './static',
     plugins: [
         html({
