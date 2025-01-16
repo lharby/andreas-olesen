@@ -4,8 +4,8 @@
 - Create page of projects which we will fetch via ajax and inject under a 'Work', navigation. - DONE
 
 #### 12.01.25
-- Try and generate minified css with a style import (node)
-- Hide all content then use fade-in class after ajax complete. - PENDING
+- Try and generate minified css with a style import (node) - DONE
+- Hide all content then use fade-in class after ajax complete. - DONE
 
 #### 14.01.25
 - Add a grid layout for both tagged posts as well as a page. 
@@ -15,8 +15,8 @@
 
 #### 15.01.25
 - Order for building files
-   - Run `bun run build:styles` - generates css file from scss imports
-   - Run `bun run build` - inlines JS to html template
-   - Run `node someReplace function` create a string replace method and run via node. 
+   - Run `bun run build:styles` - generates css file from scss imports - DONE
+   - Run `bun run build` - inlines JS to html template - DONE
+   - Run `bun run injectcss` create a string replace method and run via node. - DONE
    - See if this can all be run via a watch command
 - Issue with Tumblr template (not valid HTML, handlebars, moustache etc).
