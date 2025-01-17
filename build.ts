@@ -7,7 +7,8 @@ await Bun.build({
         html({
             minifyOptions: {
                 minifyCSS: true,
-                minifyJS: true
+                minifyJS: true,
+                removeComments: true
             },
             inline: { 
                 css: true,
