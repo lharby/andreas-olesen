@@ -14,29 +14,51 @@ https: //slackwise.org.uk
     padding: 0;
 }
 
-html {
-    background-color: vars.$white;
+body {
+    font-family: vars.$primary-font;
+    font-size: vars.$spacer-mid;
+    margin: 0;
+    padding: 0;
 
-    &.no-scroll {
-        overflow-y: hidden;
+    @include mixin.tablet() {
+        font-size: vars.$spacer-default;
     }
 }
 
-body {
-    @include mixin.hover(all, 100ms, ease-in);
+a,
+a:hover,
+a:visited {
     color: vars.$black;
-    background-color: orange;
-    font-family: vars.$primary-font;
-    font-weight: 400;
-    line-height: initial !important;
-    margin: 0;
-    padding: 0;
+    text-decoration: none;
+    transition: all 200ms ease-in;
 }
 
-a:link,
-a:visited,
-.button-href {
-    @include mixin.hover(all, 400ms, ease-in);
-    color: vars.$black;
-    text-decoration: underline;
+h1,h2,h3,h4,h5,h6,h7 {
+    font-weight: 200;
+}
+
+main img {
+    width: 100%;
+    height: auto;
+}
+
+#pageWrapper {
+    min-height: 100vh;
+    padding: vars.$spacer-small;
+
+    @include mixin.tablet() {
+        padding: vars.$spacer-mid;
+    }
+}
+
+#contents {
+    width: 100%;
+
+    @include mixin.tablet() {
+        width: 60%;
+    }
+
+    @include mixin.desktop() {
+        width: 40%;
+    }
 }

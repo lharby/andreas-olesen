@@ -1,0 +1,43 @@
+/*
+Luke Harby
+slackwise LTD
+https: //slackwise.org.uk
+2012 - present
+*/
+
+@use '../functions/variables' as vars;
+
+.entry {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: vars.$spacer-mid;
+    overflow-y: auto;
+    text-align: center;
+    background-color: vars.$white;
+    background-image: url("https://64.media.tumblr.com/c9d5c65f716430407de448c8dfd29430/8f7a265565e7d833-bb/s1280x1920/c354c791b41a16b02b05ffb3c1eb5325f782d6af.jpg");
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: vars.$z-index-10;
+
+    h1,
+    p {
+        margin: 0;
+        padding: vars.$spacer-small vars.$spacer-mid;
+        background-color: rgba(0, 0, 0, 0.4); // TODO make variable
+        color: vars.$white;
+    }
+
+    h1 {
+        font-weight: 200;
+        letter-spacing: vars.$spacer-small;
+    }
+}

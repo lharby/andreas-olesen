@@ -1,0 +1,19 @@
+/*
+Luke Harby
+slackwise LTD
+https: //slackwise.org.uk
+2012 - present
+*/
+
+@use '../functions/variables' as vars;
+
+header {
+    position: sticky;
+    width: 100%;
+    background-color: vars.$white;
+    background-color: rgba(255, 255, 255, 0.95); // TODO use variable
+    padding: 0;
+    left: 0;
+    top: 0;
+    z-index: vars.$z-index-1;
+}

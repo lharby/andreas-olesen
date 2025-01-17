@@ -1,0 +1,40 @@
+/*
+Luke Harby
+slackwise LTD
+https: //slackwise.org.uk
+2012 - present
+*/
+
+@keyframes animate-opacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animate-opacity-reverse {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes tspin-cw {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+.fade-in {
+    animation: animate-opacity 300ms ease-in;
+}
+
+.fade-out {
+    animation: animate-opacity-reverse 300ms ease-in;
+}

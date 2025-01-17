@@ -5,6 +5,7 @@ https://slackwise.org.uk
 2012 - present
 */
 
+/* colours */
 $palest-grey: #f9f9f9;
 $pale-grey: #ddd;
 $mid-grey: #777;
@@ -12,12 +13,23 @@ $white: #fff;
 $dark-grey: #333;
 $black: #000;
 
-$primary-font: 'Roboto Mono', menlo, 'courier new', courier, monospace;
-$secondary-font: helvetica, arial, sans-serif;
+$text-white: #ffffff;
+$text-black: #000000;
+
+/* fonts */
+$primary-font: 'WSH Grotesk', sans-serif;
 $icon-font: 'ionicons';
 
-$default-spacer: 50px;
+/* spacing */
+$spacer-default: 1.5rem;
+$spacer-mid: 1rem;
+$spacer-small: 0.5rem;
 
+/* breakpoints */
 $mobile-size: 740px !default;
 $tablet-size: 900px !default;
 $desktop-size: 1024px !default;
+
+/* z-indices */
+$z-index-10: 10;
+$z-index-1: 1;

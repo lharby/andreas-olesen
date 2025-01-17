@@ -1,0 +1,55 @@
+/*
+Luke Harby
+slackwise LTD
+https: //slackwise.org.uk
+2012 - present
+*/
+
+@use '../functions/variables' as vars;
+@use '../functions/mixins' as mixin;
+
+nav {
+    padding: 0 vars.$spacer-small;
+
+    @include mixin.tablet() {
+        padding: 0 vars.$spacer-mid;
+    }
+}
+
+.navigation-main {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+
+    @include mixin.tablet() {
+        flex-direction: unset;
+    }
+
+    li {
+        &:not(:last-child) {
+            margin-right: vars.$spacer-default;
+        }
+
+        &:hover {
+            ul {
+                @include mixin.tablet() {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    ul {
+        margin-left: vars.$spacer-small;
+        
+        @include mixin.tablet() {
+            position: absolute;
+            display: none;
+            margin-left: 0;
+        }
+    }
+
+    h2 {
+       margin-bottom: 0;
+    }   
+}

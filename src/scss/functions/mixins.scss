@@ -5,6 +5,8 @@ https://slackwise.org.uk
 2012 - present
 */
 
+@use './variables' as vars;
+
 @mixin hover($type, $speed, $ease) {
     transition: $type $speed $ease;
 }
@@ -13,20 +15,14 @@ https://slackwise.org.uk
     will-change: $type;
 }
 
-@mixin desktop($width) {
-    @media screen and (min-width: $width + 1) {
+@mixin desktop() {
+    @media screen and (min-width: vars.$tablet-size) {
         @content;
     }
 }
 
-@mixin tablet($width) {
-    @media screen and (min-width: 1px) and (max-width: $width) {
-        @content;
-    }
-}
-
-@mixin mobile($min, $max) {
-    @media screen and (min-width: $min) and (max-width: $max - 1) {
+@mixin tablet() {
+    @media screen and (min-width: vars.$desktop-size) {
         @content;
     }
 }

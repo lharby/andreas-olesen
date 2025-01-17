@@ -17,3 +17,7 @@ https://slackwise.org.uk
 .notVisible {
     visibility: hidden;
 }
+
+.tumblr iframe[class^='tmblr-iframe'] {
+    display: none !important;
+}

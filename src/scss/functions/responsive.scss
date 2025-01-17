@@ -8,78 +8,77 @@ https://slackwise.org.uk
 @use './variables' as vars;
 @use './mixins' as mixin;
 
-.desktopHidden {
-    display: none;
-}
-
-.desktopVisible {
-    display: block;
-}
-
 [class^='el'] {
-    float: left;
-    position: relative;
+    float: none;
     width: 100%;
 }
 
-.el-1 {
-    width: 8.33333333%;
+.mobileHidden,
+.mobileVisible {
+    display: block;
 }
 
-.el-2 {
-    width: 16.66666667%;
+.desktopHidden,
+.desktopVisible {
+    display: none;
 }
 
-.el-3 {
-    width: 25%;
-}
-
-.el-4 {
-    width: 33.33333333%;
-}
-
-.el-5 {
-    width: 41.66666667%;
-}
-
-.el-6 {
-    width: 50%;
-}
-
-.el-7 {
-    width: 58.33333333%;
-}
-
-.el-8 {
-    width: 66.66666667%;
-}
-
-.el-9 {
-    width: 75%;
-}
-
-.el-10 {
-    width: 83.33333333%;
-}
-
-.el-11 {
-    width: 91.66666667%;
-}
-
-@include mixin.tablet(vars.$tablet-size) {
-
-    [class^='el'] {
-        float: none;
-        width: 100%;
+@include mixin.tablet() {
+    .desktopHidden {
+        display: none;
     }
-
-    .mobileHidden,
-    .mobileVisible {
+    
+    .desktopVisible {
         display: block;
     }
 
-    .desktopHidden,
-    .desktopVisible {
-        display: none;
+    [class^='el'] {
+        float: left;
+        position: relative;
+        width: 100%;
+    }
+
+    .el-1 {
+        width: 8.33333333%;
+    }
+
+    .el-2 {
+        width: 16.66666667%;
+    }
+
+    .el-3 {
+        width: 25%;
+    }
+
+    .el-4 {
+        width: 33.33333333%;
+    }
+
+    .el-5 {
+        width: 41.66666667%;
+    }
+
+    .el-6 {
+        width: 50%;
+    }
+
+    .el-7 {
+        width: 58.33333333%;
+    }
+
+    .el-8 {
+        width: 66.66666667%;
+    }
+
+    .el-9 {
+        width: 75%;
+    }
+
+    .el-10 {
+        width: 83.33333333%;
+    }
+
+    .el-11 {
+        width: 91.66666667%;
     }
 }

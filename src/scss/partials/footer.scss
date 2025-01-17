@@ -1,0 +1,30 @@
+/*
+Luke Harby
+slackwise LTD
+https: //slackwise.org.uk
+2012 - present
+*/
+
+@use '../functions/variables' as vars;
+@use '../functions/mixins' as mixin;
+
+footer {
+    padding: vars.$spacer-default 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 vars.$spacer-mid;
+
+    @include mixin.tablet() {
+        flex-direction: unset;
+        justify-content: flex-end;
+    }
+}
+
+.navigation {
+    display: none;
+}
+
+.search {
+    display: none;
+    margin-bottom: vars.$spacer-mid;
+}

@@ -1,7 +1,18 @@
 @use './functions/variables';
 @use './functions/mixins';
 @use './functions/responsive';
+@use './functions/typography';
 
 @use './core/normalize';
 @use './core/layout';
 @use './core/utils';
+
+@use './partials/animations';
+@use './partials/entry';
+@use './partials/lists';
+@use './partials/header';
+@use './partials/navigation';
+@use './partials/posts';
+@use './partials/footer';
+@use './partials/loaders';
+@use './partials/index-page';
