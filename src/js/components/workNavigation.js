@@ -8,7 +8,7 @@ https://slackwise.org.uk
 /* work navigation */
 import { removeLoading } from "../utils/ajaxLoaders";
 
-const htmlElem = document.querySelector('html');
+import { htmlElem } from "./globals";
 
 const workNavigation = () => {
     const workElem = htmlElem.querySelector('.navigation-main a[href="/work"]');

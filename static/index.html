@@ -279,7 +279,14 @@
     //]]>
     </script>
     {/block:IfDisqusShortname}
-    <script>// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/utilsStorage.js
+    <script>// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/globals.js
+var htmlElem = document.querySelector("html");
+var hiddenClass = "hidden";
+var indexClass = "index";
+var loadingClass = "loading";
+var entryElem = htmlElem.querySelector(".entry");
+
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/utilsStorage.js
 var retrieveFromSessionStorage = (key) => {
   if (!key || typeof key !== "string") {
     throw new Error("Invalid key");
@@ -290,23 +297,9 @@ var retrieveFromSessionStorage = (key) => {
     return sessionStorage.getItem(key);
   }
 };
-var addToSessionStorage = (key, value) => {
-  if (!key || typeof key !== "string") {
-    throw new Error("Invalid key");
-  }
-  if (typeof value === "object") {
-    sessionStorage.setItem(key, JSON.stringify(value));
-  } else {
-    sessionStorage.setItem(key, value);
-  }
-};
 
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/entry.js
-var htmlElem = document.querySelector("html");
-var hiddenClass = "hidden";
-var fadeOutClass = "fade-out";
 var entry = () => {
-  const entryElem = htmlElem.querySelector(".entry");
   const sesstionStorageItemIsSet = retrieveFromSessionStorage("entry");
   if (sesstionStorageItemIsSet) {
     entryElem.classList.add(hiddenClass);
@@ -315,46 +308,37 @@ var entry = () => {
   }
   entryElem.addEventListener("click", (e) => {
     e.preventDefault();
-    entryElem.classList.add(fadeOutClass);
-    addToSessionStorage("entry", 1);
-  });
-  entryElem.addEventListener("animationend", () => {
-    entryElem.classList.add(hiddenClass);
   });
 };
 
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/indexPage.js
-var htmlElem2 = document.querySelector("html");
-var indexClass = "index";
 var indexPage = () => {
   const arrPaths = document.location.pathname.split("/");
   const primaryDir = arrPaths[1];
   let pathnames = arrPaths.filter((item) => item !== "");
   if (!primaryDir) {
-    htmlElem2.classList.add(indexClass);
+    htmlElem.classList.add(indexClass);
   } else {
-    htmlElem2.classList.add(...pathnames);
-    htmlElem2.classList.remove(indexClass);
+    htmlElem.classList.add(...pathnames);
+    htmlElem.classList.remove(indexClass);
   }
 };
 
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/ajaxLoaders.js
-var loadingClass = "loading";
 var removeLoading = (elem) => {
   elem.classList.remove(loadingClass);
 };
 
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/workNavigation.js
-var htmlElem3 = document.querySelector("html");
 var workNavigation = () => {
-  const workElem = htmlElem3.querySelector('.navigation-main a[href="/work"]');
+  const workElem = htmlElem.querySelector('.navigation-main a[href="/work"]');
   const workNavigationElem = "/work-navigation";
   fetch(workNavigationElem).then((res) => res.text()).then((html) => {
     const parser = new DOMParser;
     const doc = parser.parseFromString(html, "text/html");
     const container = doc.querySelector(".navigation-main__subnav");
     workElem.parentElement.appendChild(container);
-  }).catch((err) => console.warn("Something went wrong.", err)).finally(() => removeLoading(htmlElem3));
+  }).catch((err) => console.warn("Something went wrong.", err)).finally(() => removeLoading(htmlElem));
   workElem.addEventListener("click", (event) => {
     event.preventDefault();
     console.log(event.target);
@@ -369,12 +353,27 @@ var outputDate = () => {
   dateWrapper.text(getYear);
 };
 
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/toggleVisibility.js
+var toggleVisibility = (elem) => {
+  elem.classList.toggle(hiddenClass);
+};
+
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/attachKeyEvent.js
+var attachKeyEvent = () => {
+  htmlElem.addEventListener("keydown", (e) => {
+    if (e.key === "x" || e.key === "X") {
+      toggleVisibility(entryElem);
+    }
+  });
+};
+
 // src/js/app.js
 document.addEventListener("DOMContentLoaded", () => {
   entry();
   indexPage();
   workNavigation();
   outputDate();
+  attachKeyEvent();
 });
 </script>
 </body>
