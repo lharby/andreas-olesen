@@ -14,7 +14,7 @@ const cssFileString = fs.readFileSync(cssFile, 'utf8', (err, fileData)=> {
 
 });
 
-const newStr = openingString + '<style>' + cssFileString + '</style>';
+const newStr = openingString + '\r\n' + '<style>\r\n'  + cssFileString + '</style>\r\n';
 
 fs.readFile(`${indexFile}-tmp.html`, 'utf8', (err, fileData) => {
     if (err) { 
