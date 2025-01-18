@@ -1,0 +1,32 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+@use '../functions/mixins' as mixin;
+
+.scroll--active {
+    header {
+        @include mixin.willChange(transform);
+        @include mixin.hover(transform, 200ms, ease-in);
+        transform: translateY(-100%);
+
+        @include mixin.mq(tablet) {
+            transform: none;
+        }
+    }
+}
+
+.scroll--up {
+    header {
+        @include mixin.willChange(transform);
+        @include mixin.hover(transform, 200ms, ease-in);
+        transform: translateY(0);
+
+        @include mixin.mq(tablet) {
+            transform: none;
+        }
+    }
+}

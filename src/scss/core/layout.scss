@@ -10,8 +10,6 @@ https://slackwise.org.uk
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
@@ -20,7 +18,7 @@ body {
     margin: 0;
     padding: 0;
 
-    @include mixin.tablet() {
+    @include mixin.mq(tablet) {
         font-size: vars.$spacer-default;
     }
 }
@@ -31,6 +29,10 @@ a:visited {
     color: vars.$black;
     text-decoration: none;
     transition: all 200ms ease-in;
+}
+
+p {
+    margin-block-start: 0;
 }
 
 h1,h2,h3,h4,h5,h6,h7 {
@@ -46,19 +48,7 @@ main img {
     min-height: 100vh;
     padding: vars.$spacer-small;
 
-    @include mixin.tablet() {
+    @include mixin.mq(tablet) {
         padding: vars.$spacer-mid;
-    }
-}
-
-#contents {
-    width: 100%;
-
-    @include mixin.tablet() {
-        width: 60%;
-    }
-
-    @include mixin.desktop() {
-        width: 40%;
     }
 }

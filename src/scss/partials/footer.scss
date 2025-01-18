@@ -13,12 +13,12 @@ footer {
     padding: vars.$spacer-default 0;
     display: flex;
     flex-direction: column;
-    padding: 0 vars.$spacer-mid;
-    padding: vars.$spacer-mid vars.$spacer-mid 3rem;
+    justify-content: flex-end;
+    padding: vars.$spacer-small vars.$spacer-small vars.$spacer-mid;
 
-    @include mixin.tablet() {
+    @include mixin.mq(tablet) {
         flex-direction: unset;
-        justify-content: flex-end;
+        padding: vars.$spacer-mid vars.$spacer-mid vars.$spacer-mid * 3;
     }
     
     .search {

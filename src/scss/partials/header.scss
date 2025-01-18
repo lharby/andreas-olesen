@@ -6,8 +6,11 @@ https://slackwise.org.uk
 */
 
 @use '../functions/variables' as vars;
+@use '../functions//mixins' as mixin;
 
 header {
+    @include mixin.willChange(transform);
+    @include mixin.hover(transform, 200ms, ease-in);
     position: sticky;
     width: 100%;
     background-color: vars.$white;

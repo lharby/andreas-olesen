@@ -11,7 +11,7 @@ https://slackwise.org.uk
 nav {
     padding: 0 vars.$spacer-small;
 
-    @include mixin.tablet() {
+    @include mixin.mq(tablet) {
         padding: 0 vars.$spacer-mid;
     }
 }
@@ -21,18 +21,20 @@ nav {
     flex-direction: column;
     align-items: baseline;
 
-    @include mixin.tablet() {
+    @include mixin.mq(tablet) {
         flex-direction: unset;
     }
 
     li {
+        position: relative;
+
         &:not(:last-child) {
             margin-right: vars.$spacer-default;
         }
 
         &:hover {
             ul {
-                @include mixin.tablet() {
+                @include mixin.mq(tablet) {
                     display: block;
                 }
             }
@@ -41,8 +43,10 @@ nav {
 
     ul {
         margin-left: vars.$spacer-small;
+        width: max-content;
         
-        @include mixin.tablet() {
+        @include mixin.mq(tablet) {
+            background-color: vars.$white;
             position: absolute;
             display: none;
             margin-left: 0;

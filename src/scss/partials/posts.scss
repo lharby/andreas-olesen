@@ -5,9 +5,22 @@ https://slackwise.org.uk
 2012 - present
 */
 
+@use '../functions/variables' as vars;
+
+#posts {
+    margin-bottom: vars.$spacer-mid * 3;
+}
+
 .tags,
 .icon-link,
-.link,
-.navigation {
+.link {
     display: none;
+}
+
+.navigation {
+    display: flex;
+
+    li:not(:last-child) {
+        margin-right: 0.25rem;
+    }
 }

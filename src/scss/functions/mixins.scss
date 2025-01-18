@@ -5,7 +5,31 @@ https://slackwise.org.uk
 2012 - present
 */
 
-@use './variables' as vars;
+@use 'sass:map';
+
+/* 
+To use this mixin like so: 
+    @include mq(mobile) {
+        width: 50%;
+    };
+    @include mq(dektop) {
+        margin: 3rem;
+    }
+*/
+
+$breakpoints: (
+  mobile: 46.25rem,
+  tablet: 56.25rem,
+  desktop: 68.75rem,
+);
+
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
 
 @mixin hover($type, $speed, $ease) {
     transition: $type $speed $ease;
@@ -13,16 +37,4 @@ https://slackwise.org.uk
 
 @mixin willChange($type) {
     will-change: $type;
-}
-
-@mixin desktop() {
-    @media screen and (min-width: vars.$tablet-size) {
-        @content;
-    }
-}
-
-@mixin tablet() {
-    @media screen and (min-width: vars.$desktop-size) {
-        @content;
-    }
 }

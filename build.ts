@@ -3,7 +3,7 @@ import html from 'bun-plugin-html';
 await Bun.build({
     entrypoints: ['./src/index-tmp.html'],
     outdir: './static',
-    minify: true,
+    // minify: true,
     plugins: [
         html({
             minifyOptions: {
@@ -15,7 +15,8 @@ await Bun.build({
             inline: { 
                 css: true,
                 js: true
-            }
+            },
+            suppressErrors: true
         })
     ],
 });

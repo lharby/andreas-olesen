@@ -8,6 +8,7 @@ https://slackwise.org.uk
 @use './variables' as vars;
 @use './mixins' as mixin;
 
+/* TODO set this as flex */
 [class^='el'] {
     float: none;
     width: 100%;
@@ -23,7 +24,7 @@ https://slackwise.org.uk
     display: none;
 }
 
-@include mixin.tablet() {
+@include mixin.mq(tablet) {
     .desktopHidden {
         display: none;
     }
