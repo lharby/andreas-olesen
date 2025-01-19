@@ -9,10 +9,10 @@ https://slackwise.org.uk
 @use '../functions/mixins' as mixin;
 
 nav {
-    padding: 0 vars.$spacer-small;
+    padding: 0 vars.$spacer-small vars.$spacer-small;
 
     @include mixin.mq(tablet) {
-        padding: 0 vars.$spacer-mid;
+        padding: 0 vars.$spacer-mid vars.$spacer-small;
     }
 }
 

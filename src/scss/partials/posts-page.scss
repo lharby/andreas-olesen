@@ -8,29 +8,32 @@ https://slackwise.org.uk
 @use '../functions/variables' as vars;
 @use '../functions/mixins' as mixin;
 
-#posts {
-    display: flex;
-    align-items: flex-start;
-    flex-flow: initial;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: vars.$spacer-mid;
-
-    > li {
-        position: relative;
-        margin-bottom: vars.$spacer-mid * 3;
-
-        @include mixin.mq(tablet) {
-            flex: 0 0 33.33333333333%;
-            max-width: calc(33.33333333333% - vars.$spacer-mid);
-            height: 22rem;
-            overflow: hidden;
-            margin-bottom: 0;
-        }
+.tagged,
+.search {
+    #posts {
+        display: flex;
+        align-items: flex-start;
+        flex-flow: initial;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: vars.$spacer-mid;
     
-        @include mixin.mq(desktop) {
-            flex: 0 0 25%;
-            max-width: calc(25% - vars.$spacer-mid);
+        > li {
+            position: relative;
+            margin-bottom: vars.$spacer-mid * 3;
+    
+            @include mixin.mq(tablet) {
+                flex: 0 0 33.33333333333%;
+                max-width: calc(33.3333333333% - 0.6666666667rem);
+                height: 22rem;
+                overflow: hidden;
+                margin-bottom: 0;
+            }
+        
+            @include mixin.mq(desktop) {
+                flex: 0 0 25%;
+                max-width: calc(25% - 0.75rem);
+            }
         }
     }
 }

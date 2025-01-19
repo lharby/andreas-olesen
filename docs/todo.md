@@ -19,4 +19,5 @@
    - Run `bun run build` - inlines JS to html template - DONE
    - Run `bun run injectcss` create a string replace method and run via node. - DONE
    - See if this can all be run via a watch command
-- Issue with Tumblr template (not valid HTML, handlebars, moustache etc).
+- Issue with Tumblr template (not valid HTML, handlebars, moustache etc). - DONE
+- Get ajax content for index page. 
