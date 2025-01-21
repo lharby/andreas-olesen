@@ -9,7 +9,8 @@
     "build:sass": "bun run ./build.sass.ts",
     "build:styles": "bun run sass ./src/scss/main.scss ./static/css/main.css --style compressed --no-charset",
     "injectcss": "node ./src/server/injectCode.mjs",
-    "all": "bun run build:styles && bun run build && bun run injectcss -c"
+    "all": "bun run build:styles && bun run build && bun run injectcss -c",
+    "watch": "bun run all & bun run ./watcher.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
