@@ -5,6 +5,7 @@ import { workNavigation } from './components/workNavigation';
 import { outputDate } from './components/outputDate';
 import { attachKeyEvent } from './utils/attachKeyEvent';
 import { attachScrollEvent } from './utils/attachScrollEvent';
+import { lightbox } from './components/lightbox';
 
 document.addEventListener('DOMContentLoaded', () => {
     entry();
@@ -13,4 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
     outputDate();
     attachKeyEvent();
     attachScrollEvent();
+    lightbox();
 });

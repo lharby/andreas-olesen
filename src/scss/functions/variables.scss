@@ -17,14 +17,15 @@ $black: #000;
 $text-white: #ffffff;
 $text-black: #000000;
 
-/* fonts */
-$primary-font: 'WSH Grotesk', sans-serif;
-$icon-font: 'ionicons';
-
 /* spacing */
 $spacer-default: 1.5rem;
 $spacer-mid: 1rem;
 $spacer-small: 0.5rem;
+
+/* fonts */
+$primary-font: 'WSH Grotesk', sans-serif;
+$icon-font: 'ionicons';
+$icon-font--size: $spacer-default * 2;
 
 /* breakpoints */
 $mobile-size: 740px !default;

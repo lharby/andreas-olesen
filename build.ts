@@ -1,6 +1,6 @@
 import html from 'bun-plugin-html';
 
-await Bun.build({
+const runBuild = await Bun.build({
     entrypoints: ['./src/index-tmp.html'],
     outdir: './static',
     // minify: true,
@@ -20,3 +20,7 @@ await Bun.build({
         })
     ],
 });
+
+export {
+    runBuild
+}

@@ -68,7 +68,7 @@
                     Welcome
                 </div>
                 <ol id="posts"><!-- posts -->
-                    {block:Posts}
+                    {block:Posts inlineMediaWidth="1280"}
                         {block:Text}
                             <li class="post text">
                                 <div class="go">{Body}</div>
@@ -259,6 +259,12 @@
         <div>&copy; {Title} <span class="date-wrapper"></span></div>
     </footer><!-- end footer -->
 
+    <div class="modal__backdrop"></div>
+    <div class="modal">
+        <button class="modal__close ion-ios-close-empty"></button>
+        <div class="modal__inner"></div>
+    </div>
+
     {block:IfDisqusShortname}
     <script type="text/javascript">
     //<![CDATA[
@@ -441,6 +447,47 @@ var attachScrollEvent = () => {
   });
 };
 
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/lightbox.js
+var lightbox = () => {
+  const wrapper = htmlElem.querySelector("#posts");
+  const images = wrapper.querySelectorAll("img");
+  const modal = "modal";
+  const modalBackdrop = htmlElem.querySelector("." + modal + "__backdrop");
+  const modalElem = htmlElem.querySelector("." + modal);
+  const modalInner = modalElem.querySelector("." + modal + "__inner");
+  const closeClass = "modal__close";
+  images.forEach((item) => {
+    item.addEventListener("click", () => {
+      modalBackdrop.classList.add(modal + "__backdrop--show");
+      modalElem.classList.add(modal + "--show");
+      let src = item.getAttribute("src");
+      src = src.replace("_500", "_1280");
+      const template = '<img src="' + src + '" class="modal__image" />';
+      modalInner.insertAdjacentHTML("beforeend", template);
+    });
+  });
+  document.addEventListener("click", (event) => {
+    if (event.target.classList.contains(closeClass)) {
+      closeModal();
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (event.target.classList.contains(modal + "__image")) {
+      closeModal();
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modalElem.classList.contains(modal + "--show")) {
+      closeModal();
+    }
+  });
+  const closeModal = () => {
+    modalBackdrop.classList.remove(modal + "__backdrop--show");
+    modalElem.classList.remove(modal + "--show");
+    modalInner.replaceChildren();
+  };
+};
+
 // src/js/app.js
 document.addEventListener("DOMContentLoaded", () => {
   entry();
@@ -449,6 +496,7 @@ document.addEventListener("DOMContentLoaded", () => {
   outputDate();
   attachKeyEvent();
   attachScrollEvent();
+  lightbox();
 });
 </script>
 </body>

@@ -1,0 +1,73 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+@use 'sass:color';
+@use '../functions/variables' as vars;
+@use '../functions/mixins' as mixin;
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    z-index: vars.$z-index-10 + 1;
+
+    &--show {
+        display: flex;
+    }
+
+    &__backdrop {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: color.change(vars.$black, $alpha: 0.875);
+        z-index: vars.$z-index-10;
+
+        &--show {
+            display: block;
+        }
+    }
+
+    &__close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: color.change(vars.$black, $alpha: 0.2);
+        border: none;
+        color: vars.$white;
+        position: absolute;
+        top: vars.$spacer-default;
+        right: vars.$spacer-default;
+        font-size: vars.$icon-font--size;
+        border-radius: 100%;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    &__inner {
+        display: contents;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            padding: vars.$spacer-mid;
+            cursor: pointer;
+
+            @include mixin.mq(mobile) {
+                padding: vars.$spacer-default * 2;
+            }
+        }
+    }
+}

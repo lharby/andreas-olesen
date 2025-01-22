@@ -68,7 +68,7 @@
                     Welcome
                 </div>
                 <ol id="posts"><!-- posts -->
-                    {block:Posts}
+                    {block:Posts inlineMediaWidth="1280"}
                         {block:Text}
                             <li class="post text">
                                 <div class="go">{Body}</div>
@@ -258,6 +258,12 @@
         </div>
         <div>&copy; {Title} <span class="date-wrapper"></span></div>
     </footer><!-- end footer -->
+
+    <div class="modal__backdrop"></div>
+    <div class="modal">
+        <button class="modal__close ion-ios-close-empty"></button>
+        <div class="modal__inner"></div>
+    </div>
 
     {block:IfDisqusShortname}
     <script type="text/javascript">
