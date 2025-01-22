@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* entry function */
-import { hiddenClass, entryElem } from './globals';
+import { entryElem, hiddenClass, fadeOutClass } from './globals';
 import { retrieveFromSessionStorage, addToSessionStorage } from '../utils/utilsStorage';
 
 const entry = () => {
@@ -20,13 +20,13 @@ const entry = () => {
 
     entryElem.addEventListener('click', (e) => {
         e.preventDefault();
-        // entryElem.classList.add(fadeOutClass);
-        // addToSessionStorage('entry', 1);
+        entryElem.classList.add(fadeOutClass);
+        addToSessionStorage('entry', 1);
     });
 
-    // entryElem.addEventListener('animationend', () => {
-    //     entryElem.classList.add(hiddenClass);
-    // });
+    entryElem.addEventListener('animationend', () => {
+        entryElem.classList.add(hiddenClass);
+    });
 }
 
 export {

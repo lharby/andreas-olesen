@@ -284,6 +284,7 @@
     <script>// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/globals.js
 var htmlElem = document.querySelector("html");
 var hiddenClass = "hidden";
+var fadeOutClass = "fade-out";
 var indexClass = "index";
 var loadingClass = "loading";
 var entryElem = htmlElem.querySelector(".entry");
@@ -320,6 +321,11 @@ var entry = () => {
   }
   entryElem.addEventListener("click", (e) => {
     e.preventDefault();
+    entryElem.classList.add(fadeOutClass);
+    addToSessionStorage("entry", 1);
+  });
+  entryElem.addEventListener("animationend", () => {
+    entryElem.classList.add(hiddenClass);
   });
 };
 
@@ -363,32 +369,6 @@ var outputDate = () => {
   let getYear = new Date;
   getYear = getYear.getFullYear();
   dateWrapper.text(getYear);
-};
-
-// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/toggleVisibility.js
-var toggleVisibility = (elem) => {
-  const sesstionStorageItemIsSet = retrieveFromSessionStorage("entry");
-  if (sesstionStorageItemIsSet) {
-    elem.classList.add(hiddenClass);
-  } else {
-    elem.classList.remove(hiddenClass);
-  }
-  if (elem.classList.contains(hiddenClass)) {
-    elem.classList.remove(hiddenClass);
-    sessionStorage.removeItem("entry");
-  } else {
-    elem.classList.add(hiddenClass);
-    addToSessionStorage("entry", 1);
-  }
-};
-
-// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/attachKeyEvent.js
-var attachKeyEvent = () => {
-  htmlElem.addEventListener("keydown", (e) => {
-    if (e.key === "x" || e.key === "X") {
-      toggleVisibility(entryElem);
-    }
-  });
 };
 
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/scrollDirection.js
@@ -494,7 +474,6 @@ document.addEventListener("DOMContentLoaded", () => {
   indexPage();
   workNavigation();
   outputDate();
-  attachKeyEvent();
   attachScrollEvent();
   lightbox();
 });
