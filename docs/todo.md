@@ -14,7 +14,12 @@
 - Check for analyitics (not Google)
    - https://plausible.io/plausible.io
    - Matomo
+   - https://piwik.pro/pricing/
+   - https://umami.is/pricing
+   - https://ackee.electerious.com/
+   - https://www.tinybird.co/pricing
    - Check if Simply offer it
+   - Comparisons: https://conversionbridgewp.com/platforms/
 
 #### 15.01.25
 - Order for building files
