@@ -11,7 +11,7 @@
 - Add a grid layout for both tagged posts as well as a page. - DONE
 - Add every conceivable post type for testing
 - Use grid layout for work pages - DONE
-- Check for analyitics (not Google)
+- Check for analytics (not Google)
    - https://plausible.io/plausible.io
    - Matomo
    - https://piwik.pro/pricing/
@@ -30,8 +30,11 @@
 - Issue with Tumblr template (not valid HTML, handlebars, moustache etc). - DONE
 - Get ajax content for index page (create post tagged index-page)
 - Do something sexy with the nav (a la Tina Frank)
-- Build lightbox for images
+- Build lightbox for images - IN PROGRESS
 - Add scrolllock when lightbox open (and remove when closed)
+
+#### 23.01.25
+- Check on transpiling to a single JS file and inject that. 
 
 #### Questions
 - Content for index page? 
