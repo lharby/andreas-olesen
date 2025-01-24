@@ -31,7 +31,8 @@
 - Get ajax content for index page (create post tagged index-page)
 - Do something sexy with the nav (a la Tina Frank)
 - Build lightbox for images - IN PROGRESS
-- Add scrolllock when lightbox open (and remove when closed)
+   - Lightbox get images via ajax instead of string replace
+   - Add scrolllock when lightbox open (and remove when closed)
 
 #### 23.01.25
 - Check on transpiling to a single JS file and inject that. 

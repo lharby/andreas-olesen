@@ -20,13 +20,14 @@ const entry = () => {
 
     entryElem.addEventListener('click', (e) => {
         e.preventDefault();
-        entryElem.classList.add(fadeOutClass);
-        addToSessionStorage('entry', 1);
+        return;
+        // entryElem.classList.add(fadeOutClass);
+        // addToSessionStorage('entry', 1);
     });
 
-    entryElem.addEventListener('animationend', () => {
-        entryElem.classList.add(hiddenClass);
-    });
+    // entryElem.addEventListener('animationend', () => {
+    //     entryElem.classList.add(hiddenClass);
+    // });
 }
 
 export {
