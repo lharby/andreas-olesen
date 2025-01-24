@@ -36,10 +36,11 @@
 
 #### 23.01.25
 - Check on transpiling to a single JS file and inject that. 
+- Remove server files from `/public_html/`
 
 #### Questions
 - Content for index page? 
 - Always show landing page?
 - Screenshot and describe format for work pages (work-oblique), hide from navigation. This has to be authored in 'work-navigation' file, to use in the sub-nav
-- Add folder on website to use for document links ('/public_html/documents')
+- Add folder on website to use for document links `('/public_html/documents')`
 - Test other types of media, page layout etc. 
