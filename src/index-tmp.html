@@ -193,11 +193,7 @@
                                 </p>
                             </li>
                         {/block:Audio}
-                        <!-- {block:RebloggedFrom}
-                            <li>
-                                <p class="description">{lang:Reblogged from ReblogParentTitle 2}</p>
-                            </li>
-                        {/block:RebloggedFrom}
+                        <!--
                         {block:HasTags}
                             <li>
                                 <ol class="description tags ion-ios-pricetag-outline">
@@ -205,18 +201,7 @@
                                 </ol>
                             </li>
                         {/block:HasTags}
-                        {block:PostNotes}
-                            <li>
-                                {block:Permalink}
-                                    {block:IfDisqusShortname}
-                                        <div id="disqus_thread"></div>
-                                        <script type="text/javascript" src="https://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
-                                        <noscript><a href="https://{text:Disqus Shortname}.disqus.com/?url=ref">{lang:View the discussion thread}</a></noscript>
-                                    {/block:IfDisqusShortname}
-                                {/block:Permalink}
-                                {PostNotes}
-                            </li>
-                        {/block:PostNotes} -->
+                        -->
                     {/block:Posts}
                     {block:SearchPage}
                         <li class="post">
@@ -228,7 +213,7 @@
                     {/block:SearchPage}
                 </ol><!-- end posts -->
                 {block:IndexPage}
-                    <ol class="post nav navigation lowerCase">
+                    <ol class="post nav navigation">
                         {block:PreviousPage}
                             <li class="m-r-2">
                                 <a href="{PreviousPage}" class="prev">{lang:Previous}</a>
@@ -259,28 +244,13 @@
         <div>&copy; {Title} <span class="date-wrapper"></span></div>
     </footer><!-- end footer -->
 
+    <!-- modal -->
     <div class="modal__backdrop"></div>
     <div class="modal">
         <button class="modal__close ion-ios-close-empty"></button>
         <div class="modal__inner"></div>
     </div>
 
-    {block:IfDisqusShortname}
-    <script type="text/javascript">
-    //<![CDATA[
-    (function() {
-        var links = document.getElementsByTagName('a');
-        var query = '?';
-        for(var i = 0; i < links.length; i++) {
-            if(links[i].href.indexOf('#disqus_thread') >= 0) {
-                query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-            }
-        }
-        document.write('<script charset="utf-8" type="text/javascript" src="https://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
-    })();
-    //]]>
-    </script>
-    {/block:IfDisqusShortname}
     <script src="./js/app.js"></script>
 </body>
 </html>

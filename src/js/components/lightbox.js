@@ -6,7 +6,8 @@ https://slackwise.org.uk
 */
 
 /* lightbox */
-import { htmlElem } from "./globals";
+import { htmlElem } from './globals';
+import { enableScrollLock, disableScrollLock } from '../utils/scrollLock';
 
 const lightbox = () => {
     const wrapper = htmlElem.querySelector('#posts');
@@ -23,19 +24,22 @@ const lightbox = () => {
             modalElem.classList.add(modal + '--show');
             let src = item.getAttribute('src');
             src = src.replace('_500', '_1280');
-            const template = '<img src="' +src+ '" class="modal__image" />';
-            modalInner.insertAdjacentHTML('beforeend', template);
+
+            fetch(src)
+                .then((data) => {
+                    const template = '<img src="' +data.url+ '" class="modal__image" />';
+                    modalInner.insertAdjacentHTML('beforeend', template);
+                    enableScrollLock();
+                })
+                .catch(error => console.log(error));
         });
     });
 
     document.addEventListener('click', (event) => {
-        if (event.target.classList.contains(closeClass)) {
-            closeModal();
-        }
-    });
-
-    document.addEventListener('click', (event) => {
-        if (event.target.classList.contains(modal + '__image')) {
+        if (
+            event.target.classList.contains(closeClass) ||
+            event.target.classList.contains(modal + '__image')
+        ) {
             closeModal();
         }
     });
@@ -50,6 +54,7 @@ const lightbox = () => {
         modalBackdrop.classList.remove(modal + '__backdrop--show');
         modalElem.classList.remove(modal + '--show');
         modalInner.replaceChildren();
+        disableScrollLock();
     }
 }
 

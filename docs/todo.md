@@ -30,13 +30,14 @@
 - Issue with Tumblr template (not valid HTML, handlebars, moustache etc). - DONE
 - Get ajax content for index page (create post tagged index-page)
 - Do something sexy with the nav (a la Tina Frank)
-- Build lightbox for images - IN PROGRESS
-   - Lightbox get images via ajax instead of string replace
-   - Add scrolllock when lightbox open (and remove when closed)
+- Build lightbox for images - DONE
+   - Lightbox get images via ajax instead of string replace - DONE
+   - Add scrolllock when lightbox open (and remove when closed) - DONE
 
 #### 23.01.25
 - Check on transpiling to a single JS file and inject that. 
-- Remove server files from `/public_html/`
+- Remove server files from `/public_html/` - DONE
+- Add ajax loader when calling images into lightbox
 
 #### Questions
 - Content for index page? 

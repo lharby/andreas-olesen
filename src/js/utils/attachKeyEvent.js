@@ -6,9 +6,9 @@ https://slackwise.org.uk
 */
 
 /* attachKeyEvent function */
-import { toggleVisibility } from "./toggleVisibility";
+import { toggleVisibility } from './toggleVisibility';
 
-import { htmlElem, entryElem } from "../components/globals";
+import { htmlElem, entryElem } from '../components/globals';
 
 const attachKeyEvent = () => {
     htmlElem.addEventListener('keydown', (e) => {

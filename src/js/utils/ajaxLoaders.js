@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* ajax loader functions */
-import { loadingClass } from "../components/globals";
+import { loadingClass } from '../components/globals';
 
 const setLoading = (elem) => {
     elem.classList.add(loadingClass);

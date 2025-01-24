@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* index page */
-import { htmlElem, indexClass } from "./globals";
+import { htmlElem, indexClass } from './globals';
 
 const indexPage = () => {
     const arrPaths = document.location.pathname.split('/');

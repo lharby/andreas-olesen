@@ -11,10 +11,11 @@ https://slackwise.org.uk
 header {
     @include mixin.willChange(transform);
     @include mixin.hover(transform, 200ms, ease-in);
+    backdrop-filter: blur(vars.$spacer-small);
     position: sticky;
     width: 100%;
     background-color: vars.$white;
-    background-color: rgba(255, 255, 255, 0.95); // TODO use variable
+    background-color: vars.$background-white-transparent;
     padding: 0;
     left: 0;
     top: 0;

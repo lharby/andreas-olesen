@@ -6,9 +6,9 @@ https://slackwise.org.uk
 */
 
 /* work navigation */
-import { removeLoading } from "../utils/ajaxLoaders";
+import { removeLoading } from '../utils/ajaxLoaders';
 
-import { htmlElem } from "./globals";
+import { htmlElem } from './globals';
 
 const workNavigation = () => {
     const workElem = htmlElem.querySelector('.navigation-main a[href="/work"]');

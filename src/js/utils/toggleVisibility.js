@@ -6,7 +6,7 @@ https://slackwise.org.uk
 */
 
 /* toggle visibility */
-import { hiddenClass } from "../components/globals";
+import { hiddenClass } from '../components/globals';
 import { retrieveFromSessionStorage, addToSessionStorage } from '../utils/utilsStorage';
 
 const toggleVisibility = (elem) => {
