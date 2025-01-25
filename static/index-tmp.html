@@ -308,6 +308,9 @@ var indexPage = () => {
 };
 
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/ajaxLoaders.js
+var setLoading = (elem) => {
+  elem.classList.add(loadingClass);
+};
 var removeLoading = (elem) => {
   elem.classList.remove(loadingClass);
 };
@@ -475,6 +478,34 @@ var className = "doc-scroll-lock";
 var scrollTop = 0;
 var isScrollLocked = false;
 
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/setMediaLoader.js
+var setMediaLoader = () => {
+  const modal = "modal";
+  const modalElem = htmlElem.querySelector("." + modal);
+  const modalInner = modalElem.querySelector("." + modal + "__inner");
+  const media = modalInner.querySelectorAll("img");
+  setLoading(modalElem);
+  function loaded() {
+    removeLoading(modalElem);
+  }
+  if ([...media].length) {
+    [...media].forEach((item) => {
+      if (item && item.complete) {
+        loaded();
+      } else if (!item) {
+        loaded();
+      } else {
+        item?.addEventListener("load", loaded);
+        item?.addEventListener("error", function() {
+          console.log("error loading image");
+        });
+      }
+    });
+  } else {
+    loaded();
+  }
+};
+
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/lightbox.js
 var lightbox = () => {
   const wrapper = htmlElem.querySelector("#posts");
@@ -493,8 +524,11 @@ var lightbox = () => {
       fetch(src).then((data) => {
         const template = '<img src="' + data.url + '" class="modal__image" />';
         modalInner.insertAdjacentHTML("beforeend", template);
+        setMediaLoader();
         enableScrollLock();
-      }).catch((error) => console.log(error));
+      }).catch((error) => {
+        console.log(error);
+      });
     });
   });
   document.addEventListener("click", (event) => {

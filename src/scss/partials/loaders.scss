@@ -16,8 +16,8 @@ html {
 
         &:before {
             animation: tspin-cw 1s linear infinite;
-            font-family: vars.$icon-font;
             content: "\f29c";
+            font-family: vars.$icon-font;
             font-size: vars.$spacer-default;
             z-index: vars.$z-index-1 + 1;
             position: fixed;

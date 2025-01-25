@@ -29,15 +29,15 @@
    - See if this can all be run via a watch command ?
 - Issue with Tumblr template (not valid HTML, handlebars, moustache etc). - DONE
 - Get ajax content for index page (create post tagged index-page)
-- Do something sexy with the nav (a la Tina Frank)
+- Do something sexy with the nav (a la Tina Frank) ?
 - Build lightbox for images - DONE
-   - Lightbox get images via ajax instead of string replace - DONE
+   - Lightbox get images via ajax instead of string replace. Add error fallback - DONE
    - Add scrolllock when lightbox open (and remove when closed) - DONE
 
 #### 23.01.25
 - Check on transpiling to a single JS file and inject that. 
 - Remove server files from `/public_html/` - DONE
-- Add ajax loader when calling images into lightbox
+- Add ajax loader when calling images into lightbox - DONE
 
 #### Questions
 - Content for index page? 

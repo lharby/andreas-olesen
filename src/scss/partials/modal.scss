@@ -25,6 +25,25 @@ https://slackwise.org.uk
         display: flex;
     }
 
+    &.loading {
+        pointer-events: none;
+
+        &:before {
+            animation: tspin-cw 1s linear infinite;
+            content: "\f29c";
+            color: vars.$white;
+            font-family: vars.$icon-font;
+            font-size: vars.$spacer-default;
+            position: absolute;
+            top: 2rem;
+            right: 2.1rem;
+        }
+
+        .modal__close {
+            display: none;
+        }
+    }
+
     &__backdrop {
         display: none;
         position: fixed;

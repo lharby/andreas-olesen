@@ -8,6 +8,7 @@ https://slackwise.org.uk
 /* lightbox */
 import { htmlElem } from './globals';
 import { enableScrollLock, disableScrollLock } from '../utils/scrollLock';
+import { setMediaLoader } from '../utils/setMediaLoader';
 
 const lightbox = () => {
     const wrapper = htmlElem.querySelector('#posts');
@@ -29,9 +30,12 @@ const lightbox = () => {
                 .then((data) => {
                     const template = '<img src="' +data.url+ '" class="modal__image" />';
                     modalInner.insertAdjacentHTML('beforeend', template);
+                    setMediaLoader();
                     enableScrollLock();
                 })
-                .catch(error => console.log(error));
+                .catch(error => {
+                    console.log(error);
+                });
         });
     });
 
