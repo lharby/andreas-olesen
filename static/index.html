@@ -319,6 +319,21 @@ var removeLoading = (elem) => {
   elem.classList.remove(loadingClass);
 };
 
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/redirect.js
+var arrPaths = document.location.pathname.split("/");
+var primaryDir = arrPaths[1];
+var redirect = (currentPage, newPage) => {
+  if (primaryDir === currentPage) {
+    document.location = newPage;
+  }
+};
+
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/workRedirect.js
+var workRedirect = () => {
+  const firstItem = htmlElem.querySelector(".navigation-main__subnav > li a").getAttribute("href");
+  redirect("work", firstItem);
+};
+
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/workNavigation.js
 var workNavigation = () => {
   const workElem = htmlElem.querySelector('.navigation-main a[href="/work"]');
@@ -328,7 +343,10 @@ var workNavigation = () => {
     const doc = parser.parseFromString(html, "text/html");
     const container = doc.querySelector(".navigation-main__subnav");
     workElem.parentElement.appendChild(container);
-  }).catch((err) => console.warn("Something went wrong.", err)).finally(() => removeLoading(htmlElem));
+  }).catch((err) => console.warn("Something went wrong.", err)).finally(() => {
+    removeLoading(htmlElem);
+    workRedirect();
+  });
   workElem.addEventListener("click", (event) => {
     event.preventDefault();
     console.log(event.target);

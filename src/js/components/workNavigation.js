@@ -9,6 +9,7 @@ https://slackwise.org.uk
 import { removeLoading } from '../utils/ajaxLoaders';
 
 import { htmlElem } from './globals';
+import { workRedirect } from './workRedirect';
 
 const workNavigation = () => {
     const workElem = htmlElem.querySelector('.navigation-main a[href="/work"]');
@@ -22,7 +23,10 @@ const workNavigation = () => {
             workElem.parentElement.appendChild(container);
         })
         .catch(err => console.warn('Something went wrong.', err))
-        .finally(() => removeLoading(htmlElem));
+        .finally(() => {
+            removeLoading(htmlElem);
+            workRedirect();
+        });
 
     workElem.addEventListener('click', (event) => {
         event.preventDefault();
