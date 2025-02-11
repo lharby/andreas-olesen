@@ -1,4 +1,5 @@
 import './components/globals';
+import { router } from './components/router';
 import { entry } from './components/entry';
 import { indexPage } from './components/indexPage';
 import { workNavigation } from './components/workNavigation';
@@ -7,12 +8,25 @@ import { attachKeyEvent } from './utils/attachKeyEvent';
 import { attachScrollEvent } from './utils/attachScrollEvent';
 import { lightbox } from './components/lightbox';
 
-document.addEventListener('DOMContentLoaded', () => {
+const dynamicFunctions = () => {
+    lightbox();
+}
+
+const staticFunctions = () => {
+    router();
     entry();
     indexPage();
     workNavigation();
     outputDate();
     attachKeyEvent();
     attachScrollEvent();
-    lightbox();
+    dynamicFunctions();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    staticFunctions();
 });
+
+export {
+    dynamicFunctions
+}

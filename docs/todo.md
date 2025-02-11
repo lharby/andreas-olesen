@@ -39,6 +39,14 @@
 - Remove server files from `/public_html/` - DONE
 - Add ajax loader when calling images into lightbox - DONE
 
+#### 06.02.25
+- Write ajax load for all pages with graceful fallback - DONE
+
+#### 10.02.25
+- Create new Tumblr for podcasting
+- Add scroll to top after ajax completes - DONE
+- Align pagination to bottom of page
+
 #### Questions
 - Content for index page? 
 - Always show landing page?

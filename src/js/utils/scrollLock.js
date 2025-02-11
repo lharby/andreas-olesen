@@ -29,7 +29,7 @@ export function enableScrollLock() {
         window.scrollTo(scrollPosition.left, 0);
 
         htmlElem.classList.add(className);
-        htmlElem.style.marginTop = `${-scrollPosition.top}px`;
+        htmlElem.style.marginTop = -scrollPosition.top + 'px';
         htmlElem.style.marginLeft = 0;
         htmlElem.style.position = 'fixed';
         htmlElem.style.overflowY = 'hidden';

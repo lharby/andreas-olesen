@@ -7,6 +7,8 @@ https://slackwise.org.uk
 
 /* globals */
 const htmlElem = document.querySelector('html');
+const body = htmlElem.querySelector('body');
+const pageWrapper = htmlElem.querySelector('#pageWrapper');
 const hiddenClass = 'hidden';
 const fadeOutClass = 'fade-out';
 const indexClass = 'index';
@@ -15,6 +17,8 @@ const entryElem = htmlElem.querySelector('.entry');
 
 export {
     htmlElem,
+    body,
+    pageWrapper,
     hiddenClass,
     fadeOutClass,
     indexClass,

@@ -28,7 +28,7 @@ const lightbox = () => {
 
             fetch(src)
                 .then((data) => {
-                    const template = '<img src="' +data.url+ '" class="modal__image" />';
+                    const template = '<img src="' + data.url + '" class="modal__image" />';
                     modalInner.insertAdjacentHTML('beforeend', template);
                     setMediaLoader();
                     enableScrollLock();

@@ -257,10 +257,70 @@
 
     <script>// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/globals.js
 var htmlElem = document.querySelector("html");
+var body = htmlElem.querySelector("body");
+var pageWrapper = htmlElem.querySelector("#pageWrapper");
 var hiddenClass = "hidden";
 var indexClass = "index";
 var loadingClass = "loading";
 var entryElem = htmlElem.querySelector(".entry");
+
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/ajaxLoaders.js
+var setLoading = (elem) => {
+  elem.classList.add(loadingClass);
+};
+var removeLoading = (elem) => {
+  elem.classList.remove(loadingClass);
+};
+
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/scrollToTop.js
+var scrollToTop = () => {
+  body.scrollIntoView({ behavior: "smooth" });
+};
+
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/router.js
+var documentTitle;
+var router = () => {
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a");
+    if (link && link.getAttribute("href")?.startsWith("/")) {
+      event.preventDefault();
+      event.stopPropagation();
+      let href = link.getAttribute("href");
+      let hrefName = href.substring(1);
+      let arrHrefs = href.split("/").filter((item) => item !== "");
+      fetch(href).then((res) => res.text()).then((html) => {
+        htmlElem.removeAttribute("class");
+        if (href === "/") {
+          htmlElem.classList.add(indexClass);
+        } else {
+          htmlElem.classList.add(...arrHrefs);
+        }
+        updateContent(html);
+        history.pushState({ path: href }, documentTitle, "/" + hrefName);
+        routerCallback();
+      }).catch((err) => {
+        console.log("Something went wrong.", err);
+        removeLoading(htmlElem);
+      });
+    } else {
+      return;
+    }
+  });
+};
+var updateContent = (input) => {
+  pageWrapper.replaceChildren();
+  const parser = new DOMParser;
+  const doc = parser.parseFromString(input, "text/html");
+  const container = doc.querySelector("#container");
+  pageWrapper.appendChild(container);
+  documentTitle = doc.querySelector("title").textContent;
+};
+var routerCallback = () => {
+  removeLoading(htmlElem);
+  document.title = documentTitle || document.title;
+  dynamicFunctions();
+  scrollToTop();
+};
 
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/utilsStorage.js
 var retrieveFromSessionStorage = (key) => {
@@ -309,14 +369,6 @@ var indexPage = () => {
     htmlElem.classList.add(...pathnames);
     htmlElem.classList.remove(indexClass);
   }
-};
-
-// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/ajaxLoaders.js
-var setLoading = (elem) => {
-  elem.classList.add(loadingClass);
-};
-var removeLoading = (elem) => {
-  elem.classList.remove(loadingClass);
 };
 
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/redirect.js
@@ -474,7 +526,7 @@ function enableScrollLock() {
     const scrollPosition = getElementScroll();
     window.scrollTo(scrollPosition.left, 0);
     htmlElem.classList.add(className);
-    htmlElem.style.marginTop = `${-scrollPosition.top}px`;
+    htmlElem.style.marginTop = -scrollPosition.top + "px";
     htmlElem.style.marginLeft = 0;
     htmlElem.style.position = "fixed";
     htmlElem.style.overflowY = "hidden";
@@ -572,14 +624,21 @@ var lightbox = () => {
 };
 
 // src/js/app.js
-document.addEventListener("DOMContentLoaded", () => {
+var dynamicFunctions = () => {
+  lightbox();
+};
+var staticFunctions = () => {
+  router();
   entry();
   indexPage();
   workNavigation();
   outputDate();
   attachKeyEvent();
   attachScrollEvent();
-  lightbox();
+  dynamicFunctions();
+};
+document.addEventListener("DOMContentLoaded", () => {
+  staticFunctions();
 });
 </script>
 </body>
