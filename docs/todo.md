@@ -46,6 +46,7 @@
 - Create new Tumblr for podcasting
 - Add scroll to top after ajax completes - DONE
 - Align pagination to bottom of page
+- Fix Work navigation. Remove href
 
 #### Questions
 - Content for index page? 

@@ -25,7 +25,7 @@ nav {
         flex-direction: unset;
     }
 
-    li {
+    > li {
         position: relative;
 
         &:not(:last-child) {
@@ -39,6 +39,14 @@ nav {
                 }
             }
         }
+
+        > a {
+            padding: vars.$spacer-default 0;
+        }
+    }
+
+    a {
+        cursor: pointer;
     }
 
     ul {
@@ -46,10 +54,17 @@ nav {
         width: max-content;
         
         @include mixin.mq(tablet) {
-            background-color: vars.$white;
-            position: absolute;
             display: none;
-            margin-left: 0;
+            position: absolute;
+            backdrop-filter: blur(vars.$spacer-small);
+            background-color: vars.$background-white-transparent;
+            padding: 0 0.375rem;
+            margin-left: -0.375rem;
+            top: 2.55rem;
+        }
+
+        li {
+            margin-bottom: vars.$spacer-small;
         }
     }
 

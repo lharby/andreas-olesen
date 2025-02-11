@@ -7,7 +7,7 @@ https://slackwise.org.uk
 
 /* router */
 import { htmlElem, pageWrapper, indexClass } from './globals';
-import { removeLoading } from '../utils/ajaxLoaders';
+import { setLoading, removeLoading } from '../utils/ajaxLoaders';
 import { dynamicFunctions } from '../app';
 import { scrollToTop } from '../utils/scrollToTop';
 let documentTitle;
@@ -21,6 +21,7 @@ const router = () => {
             let href = link.getAttribute('href');
             let hrefName = href.substring(1);
             let arrHrefs = href.split('/').filter(item => item !== '');
+            setLoading(htmlElem);
             fetch(href)
                 .then(res => res.text())
                 .then(html => {

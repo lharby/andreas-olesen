@@ -21,6 +21,7 @@ const workNavigation = () => {
             const doc = parser.parseFromString(html, 'text/html');
             const container = doc.querySelector('.navigation-main__subnav');
             workElem.parentElement.appendChild(container);
+            workElem.removeAttribute('href');
         })
         .catch(err => console.warn('Something went wrong.', err))
         .finally(() => {

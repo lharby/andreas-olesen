@@ -284,6 +284,7 @@ var router = () => {
       let href = link.getAttribute("href");
       let hrefName = href.substring(1);
       let arrHrefs = href.split("/").filter((item) => item !== "");
+      setLoading(htmlElem);
       fetch(href).then((res) => res.text()).then((html) => {
         htmlElem.removeAttribute("class");
         if (href === "/") {
@@ -391,6 +392,7 @@ var workNavigation = () => {
     const doc = parser.parseFromString(html, "text/html");
     const container = doc.querySelector(".navigation-main__subnav");
     workElem.parentElement.appendChild(container);
+    workElem.removeAttribute("href");
   }).catch((err) => console.warn("Something went wrong.", err)).finally(() => {
     removeLoading(htmlElem);
     workRedirect();
