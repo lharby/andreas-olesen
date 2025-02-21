@@ -1,0 +1,19 @@
+/*
+Luke Harby
+slackwise LTD
+https://slackwise.org.uk
+2012 - present
+*/
+
+@use '../functions/variables' as vars;
+
+.cursor {
+    backdrop-filter: invert(1);
+    border-radius: 50%;
+    display: block;
+    height: 20px;
+    pointer-events: none;
+    position: fixed;
+    width: 20px;
+    z-index: vars.$z-index-10 + 2;
+}

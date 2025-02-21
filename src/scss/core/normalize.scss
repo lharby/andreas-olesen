@@ -452,7 +452,7 @@ html input[type="button"], // 1
 input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button; // 2
-    cursor: pointer; // 3
+    cursor: none; // 3
     @if $legacy_support_for_ie {
         *overflow: visible;  // 4
     }
@@ -462,7 +462,7 @@ input[type="submit"] {
 
 button[disabled],
 input[disabled] {
-    cursor: default;
+    cursor: none;
 }
 
 // Removes inner padding and border in FF3+

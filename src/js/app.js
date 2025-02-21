@@ -4,6 +4,7 @@ import { entry } from './components/entry';
 import { indexPage } from './components/indexPage';
 import { indexPageContent } from './components/indexPageContent';
 import { workNavigation } from './components/workNavigation';
+import { cursor } from './utils/cursor';
 import { getNavHeight } from './utils/getCSSProperties';
 import { outputDate } from './components/outputDate';
 import { attachKeyEvent } from './utils/attachKeyEvent';
@@ -20,6 +21,7 @@ const staticFunctions = () => {
     indexPage();
     indexPageContent();
     workNavigation();
+    cursor();
     getNavHeight();
     outputDate();
     attachKeyEvent();

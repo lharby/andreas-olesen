@@ -51,7 +51,7 @@
 - Align main menu right. - DONE
 - AO Header same size font - DONE
 - Reinvestigate setting page widths with indentation - DONE
-- Header active state?
+- Header active state? - NO
 - Update page title? - PENDING
 - Use css variable for nav height (and then update dynamically as needed) - DONE
 - Cookie consent?
