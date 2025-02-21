@@ -45,13 +45,13 @@
 </head>
 <body>
     <a href="/" class="entry hidden">
-        <h1>ANDREAS OLESEN</h1>
+        <h1 class="uppercase">{Title}</h1>
         <p>New site coming soon</p>
     </a>
     <header>
         <nav>
             <ul class="navigation-main">
-                <li><h2><a href="/">{Title}</a></h2></li>
+                <li class="navigation-main__first-item"><h2><a href="/">{Title}</a></h2></li>
                 {block:HasPages}
                 {block:Pages}
                 <li><a href="{URL}">{Label}</a></li>
@@ -60,13 +60,11 @@
             </ul>
         </nav>
     </header>
+    <div class="index-page"></div>
     <main id="pageWrapper"><!-- pageWrapper -->
         <div class="masthead"></div>
         <div id="container"><!-- container -->
             <div id="contents"><!-- contents -->
-                <div class="index-page">
-                    Welcome
-                </div>
                 <ol id="posts"><!-- posts -->
                     {block:Posts inlineMediaWidth="1280"}
                         {block:Text}

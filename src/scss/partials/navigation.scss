@@ -9,10 +9,10 @@ https://slackwise.org.uk
 @use '../functions/mixins' as mixin;
 
 nav {
-    padding: 0 vars.$spacer-small vars.$spacer-small;
+    padding: vars.$spacer-small;
 
     @include mixin.mq(tablet) {
-        padding: 0 vars.$spacer-mid vars.$spacer-small;
+        padding: vars.$spacer-mid;
     }
 }
 
@@ -23,11 +23,10 @@ nav {
 
     @include mixin.mq(tablet) {
         flex-direction: unset;
+        justify-content: flex-end;
     }
 
     > li {
-        position: relative;
-
         &:not(:last-child) {
             margin-right: vars.$spacer-default;
         }
@@ -42,6 +41,12 @@ nav {
 
         > a {
             padding: vars.$spacer-default 0;
+        }
+    }
+
+    &__first-item {
+        @include mixin.mq(tablet) {
+            margin-right: auto !important;
         }
     }
 
@@ -60,15 +65,22 @@ nav {
             background-color: vars.$background-white-transparent;
             padding: 0 0.375rem;
             margin-left: -0.375rem;
-            top: 2.55rem;
+            top: var(--nav-height);
         }
 
         li {
-            margin-bottom: vars.$spacer-small;
+            @include mixin.mq(tablet) {
+                margin-bottom: vars.$spacer-small;
+            }
         }
     }
 
     h2 {
-       margin-bottom: 0;
+        font-size: vars.$spacer-mid;
+        margin: 0;
+
+        @include mixin.mq(tablet) {
+            font-size: vars.$spacer-default;
+        }
     }   
 }

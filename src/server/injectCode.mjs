@@ -13,6 +13,9 @@ const cssFileString = fs.readFileSync(cssFile, 'utf8', (err, fileData)=> {
     return fileData;
 
 });
+const exportStr = `export {
+  dynamicFunctions
+};`
 
 const newStr = openingString + '\r\n' + '<style>\r\n'  + cssFileString + '</style>\r\n';
 
@@ -20,8 +23,10 @@ fs.readFile(`${indexFile}-tmp.html`, 'utf8', (err, fileData) => {
     if (err) { 
         console.log(err);
     }
-    const result = fileData.replace(openingString, newStr);
-    fs.writeFile(`${indexFile}.html`, result, 'utf8', (err) => {
+    const cssReplace = fileData.replace(openingString, newStr);
+    const finalReplace = cssReplace.replace(exportStr, '');
+    
+    fs.writeFile(`${indexFile}.html`, finalReplace, 'utf8', (err) => {
         if (err) {
             console.log(err);
         }

@@ -5,6 +5,8 @@ https://slackwise.org.uk
 2012 - present
 */
 
+@use '../functions/mixins' as mixin;
+
 .index-page {
     display: none;
 }
@@ -13,6 +15,15 @@ html {
     &.index {
         .index-page {
             display: block;
+            opacity: 0;
+
+            &.fade-in {
+                opacity: 1;
+            }
+
+            a {
+                pointer-events: none;
+            }
         }
 
         .navigation {
@@ -21,6 +32,17 @@ html {
 
         #posts {
             display: none;
+        }
+
+        #pageWrapper {
+            min-height: unset;
+            padding: 0;
+        }
+
+        #contents {
+            @include mixin.mq(tablet) {
+                min-height: unset;
+            }
         }
     }
 }

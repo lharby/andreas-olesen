@@ -45,13 +45,13 @@
 </head>
 <body>
     <a href="/" class="entry hidden">
-        <h1>ANDREAS OLESEN</h1>
+        <h1 class="uppercase">{Title}</h1>
         <p>New site coming soon</p>
     </a>
     <header>
         <nav>
             <ul class="navigation-main">
-                <li><h2><a href="/">{Title}</a></h2></li>
+                <li class="navigation-main__first-item"><h2><a href="/">{Title}</a></h2></li>
                 {block:HasPages}
                 {block:Pages}
                 <li><a href="{URL}">{Label}</a></li>
@@ -60,13 +60,11 @@
             </ul>
         </nav>
     </header>
+    <div class="index-page"></div>
     <main id="pageWrapper"><!-- pageWrapper -->
         <div class="masthead"></div>
         <div id="container"><!-- container -->
             <div id="contents"><!-- contents -->
-                <div class="index-page">
-                    Welcome
-                </div>
                 <ol id="posts"><!-- posts -->
                     {block:Posts inlineMediaWidth="1280"}
                         {block:Text}
@@ -256,6 +254,7 @@ var htmlElem = document.querySelector("html");
 var body = htmlElem.querySelector("body");
 var pageWrapper = htmlElem.querySelector("#pageWrapper");
 var hiddenClass = "hidden";
+var fadeInClass = "fade-in";
 var indexClass = "index";
 var loadingClass = "loading";
 var entryElem = htmlElem.querySelector(".entry");
@@ -368,6 +367,18 @@ var indexPage = () => {
   }
 };
 
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/indexPageContent.js
+var indexPageContent = () => {
+  const post = "/post/775945015353556992";
+  const indexPageWrapper = htmlElem.querySelector(".index-page");
+  fetch(post).then((res) => res.text()).then((html) => {
+    const parser = new DOMParser;
+    const doc = parser.parseFromString(html, "text/html");
+    const container = doc.querySelector(".go");
+    indexPageWrapper.appendChild(container);
+  }).catch((err) => console.log(err)).finally(() => indexPageWrapper.classList.add(fadeInClass));
+};
+
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/redirect.js
 var arrPaths = document.location.pathname.split("/");
 var primaryDir = arrPaths[1];
@@ -399,8 +410,13 @@ var workNavigation = () => {
   });
   workElem.addEventListener("click", (event) => {
     event.preventDefault();
-    console.log(event.target);
   });
+};
+
+// /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/utils/getCSSProperties.js
+var getNavHeight = () => {
+  const elem = htmlElem.querySelector("header");
+  return document.documentElement.style.setProperty("--nav-height", elem.clientHeight + "px");
 };
 
 // /Users/lukeharby/Documents/LH/webs/andreas-olesen/src/js/components/outputDate.js
@@ -629,7 +645,9 @@ var staticFunctions = () => {
   router();
   entry();
   indexPage();
+  indexPageContent();
   workNavigation();
+  getNavHeight();
   outputDate();
   attachKeyEvent();
   attachScrollEvent();

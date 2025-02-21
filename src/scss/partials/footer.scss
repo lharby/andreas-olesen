@@ -15,6 +15,7 @@ footer {
     flex-direction: column;
     justify-content: flex-end;
     padding: vars.$spacer-small vars.$spacer-small vars.$spacer-mid;
+    font-size: vars.$spacer-mid;
 
     @include mixin.mq(tablet) {
         flex-direction: unset;

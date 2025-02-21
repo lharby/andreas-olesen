@@ -52,3 +52,19 @@ main img {
         padding: vars.$spacer-mid;
     }
 }
+
+#contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    @include mixin.mq(tablet) {
+        min-height: 90vh;
+        width: 85%;
+    }
+
+    p {
+        text-align: justify;
+    }
+}
