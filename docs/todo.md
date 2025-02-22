@@ -54,10 +54,10 @@
 - Header active state? - NO
 - Update page title? - PENDING
 - Use css variable for nav height (and then update dynamically as needed) - DONE
-- Cookie consent?
 - Landing page image in post? 
 - Mobile navigation, add hamburger or tooggle. 
-- Custom cursor, like a dot? 
+- Custom cursor, like a dot? - DONE
+- Add top padding to sub nav
 
 #### Questions
 - Content for index page? - DONE
@@ -65,3 +65,4 @@
 - Screenshot and describe format for work pages (work-oblique), hide from navigation. This has to be authored in 'work-navigation' file, to use in the sub-nav
 - Add folder on website to use for document links `('/public_html/documents')`
 - Test other types of media, page layout etc. 
+- Cookie consent?
