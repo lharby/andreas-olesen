@@ -54,15 +54,17 @@
 - Header active state? - NO
 - Update page title? - PENDING
 - Use css variable for nav height (and then update dynamically as needed) - DONE
-- Landing page image in post? 
+- Landing page image in post? - DONE
 - Mobile navigation, add hamburger or tooggle. 
 - Custom cursor, like a dot? - DONE
-- Add top padding to sub nav
+- Add top padding to sub nav - DONE
+- Use same height for work image posts via flex - DONE
+- css Selection text
 
 #### Questions
 - Content for index page? - DONE
-- Always show landing page?
-- Screenshot and describe format for work pages (work-oblique), hide from navigation. This has to be authored in 'work-navigation' file, to use in the sub-nav
+- Always show landing page? - DONE
+- Screenshot and describe format for work pages (work-oblique), hide from navigation. This has to be authored in 'work-navigation' file, to use in the sub-nav - DONE
 - Add folder on website to use for document links `('/public_html/documents')`
 - Test other types of media, page layout etc. 
 - Cookie consent?

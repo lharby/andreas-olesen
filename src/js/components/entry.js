@@ -6,28 +6,44 @@ https://slackwise.org.uk
 */
 
 /* entry function */
-import { entryElem, hiddenClass, fadeOutClass } from './globals';
+import { entryElem, hiddenClass, fadeInClass, fadeOutClass } from './globals';
 import { retrieveFromSessionStorage, addToSessionStorage } from '../utils/utilsStorage';
 
 const entry = () => {
     const sesstionStorageItemIsSet = retrieveFromSessionStorage('entry');
 
-    if (sesstionStorageItemIsSet) {
-        entryElem.classList.add(hiddenClass);
-    } else {
-        entryElem.classList.remove(hiddenClass);
+    if (entryElem) {
+        const post = '/post/772134655141003264';
+        fetch(post)
+            .then(res => res.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const img = doc.querySelector('img').getAttribute('src');
+                entryElem.style.backgroundImage = 'url(' + img + ')';
+            })
+            .catch(err => console.log(err));
+
+        if (sesstionStorageItemIsSet) {
+            entryElem.classList.add(hiddenClass);
+        } else {
+            entryElem.classList.remove(hiddenClass);
+        }
+    
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('entry')) {
+                e.preventDefault();
+                return false;
+                // entryElem.classList.add(fadeOutClass);
+                // addToSessionStorage('entry', 1);
+            }
+        });
+    
+        // entryElem.addEventListener('animationend', () => {
+        //     entryElem.classList.add(hiddenClass);
+        // });
     }
 
-    entryElem.addEventListener('click', (e) => {
-        e.preventDefault();
-        return;
-        // entryElem.classList.add(fadeOutClass);
-        // addToSessionStorage('entry', 1);
-    });
-
-    // entryElem.addEventListener('animationend', () => {
-    //     entryElem.classList.add(hiddenClass);
-    // });
 }
 
 export {

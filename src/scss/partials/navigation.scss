@@ -39,7 +39,8 @@ nav {
             }
         }
 
-        > a {
+        > a,
+        h2 > a {
             padding: vars.$spacer-default 0;
         }
     }
@@ -64,9 +65,11 @@ nav {
             top: var(--nav-height);
         }
 
-        li {
+        a {
+            display: block;
+            
             @include mixin.mq(tablet) {
-                margin-bottom: vars.$spacer-small;
+                padding: vars.$spacer-small 0;
             }
         }
     }

@@ -12,9 +12,6 @@ https://slackwise.org.uk
     .go {
         display: flex;
         flex-wrap: wrap !important;
-        align-items: flex-start;
-        flex-flow: initial;
-        justify-content: flex-start;
         gap: 1rem;
 
         p {
@@ -35,6 +32,10 @@ https://slackwise.org.uk
                     flex: 0 0 25%;
                     max-width: calc(25% - 0.75rem);
                 }
+            }
+
+            img {
+                object-fit: cover;
             }
         }
     }

@@ -30,6 +30,18 @@ fs.readFile(`${indexFile}-tmp.html`, 'utf8', (err, fileData) => {
         if (err) {
             console.log(err);
         }
+        removeFile();
         console.log('Finished');
     });
 });
+
+const removeFile = () => {
+    const fileToRemove = `${indexFile}-tmp.html`;
+    fs.unlink(fileToRemove, err => {
+        if (err) {
+            console.log(`Error deleting file ${err}`);
+        }
+        console.log(`File to remove from cleanup: ${fileToRemove}`);
+    });
+    // process.exit(0);
+};

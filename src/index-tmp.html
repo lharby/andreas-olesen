@@ -34,6 +34,7 @@
     <meta name="color:Sidebar Hyperlink" content="#555555"/>
     <meta name="color:Sidebar Hyperlink Border" content="#999999"/>
     <meta name="color:Visited Hyperlink" content="#582525"/>
+    <meta name="if:Show Landing Page" content="1" />
     <!-- END DEFAULT COLORS -->
 
     <!-- CSS -->
@@ -45,10 +46,12 @@
 </head>
 <body>
     <div class="cursor"></div>
+    {block:IfShowLandingPage}
     <a href="/" class="entry hidden">
         <h1 class="uppercase">{Title}</h1>
         <p>New site coming soon</p>
     </a>
+    {/block:IfShowLandingPage}
     <header>
         <nav>
             <ul class="navigation-main">

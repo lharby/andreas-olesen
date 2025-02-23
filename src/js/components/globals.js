@@ -11,6 +11,7 @@ const body = htmlElem.querySelector('body');
 const pageWrapper = htmlElem.querySelector('#pageWrapper');
 const hiddenClass = 'hidden';
 const fadeInClass = 'fade-in';
+const fadeInSlowClass = 'fade-in-slow';
 const fadeOutClass = 'fade-out';
 const indexClass = 'index';
 const loadingClass = 'loading';
@@ -20,8 +21,9 @@ export {
     htmlElem,
     body,
     pageWrapper,
-    fadeInClass,
     hiddenClass,
+    fadeInClass,
+    fadeInSlowClass,
     fadeOutClass,
     indexClass,
     loadingClass,

@@ -35,6 +35,10 @@ https://slackwise.org.uk
     animation: animate-opacity 300ms ease-in;
 }
 
+.fade-in-slow {
+    animation: animate-opacity 600ms ease-in;;
+}
+
 .fade-out {
     animation: animate-opacity-reverse 300ms ease-in;
 }
