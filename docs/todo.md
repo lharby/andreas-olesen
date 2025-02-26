@@ -12,15 +12,25 @@
 - Add every conceivable post type for testing
 - Use grid layout for work pages - DONE
 - Check for analytics (not Google)
-   - https://plausible.io/plausible.io
-   - Matomo
-   - https://piwik.pro/pricing/
-   - https://umami.is/pricing
+   - https://plausible.io/plausible.io - PAID
+   - Matomo - PAID
+   - https://piwik.pro/pricing/ 
+      - FREE tier (14 month data retention)
+      - Simple js snippet
+   - https://umami.is/pricing 
+      - FREE (6 month data retention)
+      - Simple js snippet
    - https://ackee.electerious.com/
+      - Free
+      - Requires node server
    - https://www.tinybird.co/pricing
-   - Check if Simply offer it
-   - Comparisons: https://conversionbridgewp.com/platforms/
+      - Free tier
+      - Complex setup
+   - Check if Simply offer it - NO
+   - Comparisons: https://conversionbridgewp.com/platforms/ - NO
    - https://mixpanel.com/pricing/
+      - Free tier
+      - requires node import js (bloat)
 
 #### 15.01.25
 - Order for building files
@@ -59,7 +69,9 @@
 - Custom cursor, like a dot? - DONE
 - Add top padding to sub nav - DONE
 - Use same height for work image posts via flex - DONE
-- css Selection text
+- css Selection text - DONE
+- Initialise Mixpanel analytics - NO
+- Test other analytics. umami
 
 #### Questions
 - Content for index page? - DONE
@@ -68,3 +80,4 @@
 - Add folder on website to use for document links `('/public_html/documents')`
 - Test other types of media, page layout etc. 
 - Cookie consent?
+   - https://stackoverflow.com/a/49856996/1238244

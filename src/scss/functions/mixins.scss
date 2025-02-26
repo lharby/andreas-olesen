@@ -8,7 +8,7 @@ https://slackwise.org.uk
 @use 'sass:map';
 
 /* 
-To use this mixin like so: 
+Use this mixin like so: 
     @include mq(mobile) {
         width: 50%;
     };
@@ -37,4 +37,8 @@ $breakpoints: (
 
 @mixin willChange($type) {
     will-change: $type;
+}
+
+@mixin selection {
+  ::selection { @content; }
 }
