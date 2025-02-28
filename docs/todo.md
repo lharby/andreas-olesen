@@ -65,13 +65,16 @@
 - Update page title? - PENDING
 - Use css variable for nav height (and then update dynamically as needed) - DONE
 - Landing page image in post? - DONE
-- Mobile navigation, add hamburger or tooggle. 
+- Mobile navigation, add hamburger or tooggle.
+   - https://bristolnewmusic.org/ 
+   - https://www.nickthurston.info/
+   - https://www.antonispittas.com/
 - Custom cursor, like a dot? - DONE
 - Add top padding to sub nav - DONE
 - Use same height for work image posts via flex - DONE
 - css Selection text - DONE
 - Initialise Mixpanel analytics - NO
-- Test other analytics. umami
+- Test other analytics. Umami
 
 #### Questions
 - Content for index page? - DONE

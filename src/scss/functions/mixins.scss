@@ -9,26 +9,26 @@ https://slackwise.org.uk
 
 /* 
 Use this mixin like so: 
-    @include mq(mobile) {
-        width: 50%;
-    };
-    @include mq(dektop) {
-        margin: 3rem;
-    }
+@include mq(mobile) {
+    width: 50%;
+};
+@include mq(dektop) {
+    margin: 3rem;
+}
 */
 
 $breakpoints: (
-  mobile: 46.25rem,
-  tablet: 56.25rem,
-  desktop: 68.75rem,
+    mobile: 46.25rem,
+    tablet: 56.25rem,
+    desktop: 68.75rem,
 );
 
 @mixin mq($key) {
-  $size: map.get($breakpoints, $key);
+    $size: map.get($breakpoints, $key);
 
-  @media only screen and (min-width: $size) {
-    @content;
-  }
+    @media only screen and (min-width: $size) {
+        @content;
+    }
 }
 
 @mixin hover($type, $speed, $ease) {
@@ -40,5 +40,5 @@ $breakpoints: (
 }
 
 @mixin selection {
-  ::selection { @content; }
+    ::selection { @content; }
 }
