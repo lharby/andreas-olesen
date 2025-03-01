@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "bun run --watch ./src/index.html",
     "build": "bun run ./build.ts",
-    "build:sass": "bun run ./build.sass.ts",
     "build:styles": "bun run sass ./src/scss/main.scss ./static/css/main.css --style compressed --no-charset",
     "injectcss": "node ./src/server/injectCode.mjs",
     "all": "bun run build:styles && bun run build && bun run injectcss -c",
