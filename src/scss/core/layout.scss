@@ -57,6 +57,14 @@ main img {
     @include mixin.mq(tablet) {
         padding: vars.$spacer-mid;
     }
+
+    a {
+        border-bottom: 1px solid vars.$black;
+
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
+    }
 }
 
 #contents {

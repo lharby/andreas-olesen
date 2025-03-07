@@ -7,28 +7,26 @@ https://slackwise.org.uk
 
 @use './mixins' as mixin;
 
+.mobile-only {
+    display: block;
+}
+
+.desktop-only {
+    display: none;
+}
+
 /* TODO set this as flex */
 [class^='el'] {
     float: none;
     width: 100%;
 }
 
-.mobileHidden,
-.mobileVisible {
-    display: block;
-}
-
-.desktopHidden,
-.desktopVisible {
-    display: none;
-}
-
 @include mixin.mq(tablet) {
-    .desktopHidden {
+    .mobile-only {
         display: none;
     }
-    
-    .desktopVisible {
+
+    .desktop-only {
         display: block;
     }
 

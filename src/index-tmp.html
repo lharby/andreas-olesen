@@ -40,11 +40,8 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
 
-    <!-- SCRIPTS -->
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-
     <!-- ANALYTICS -->
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="6022cb5a-2480-4dd3-9252-8f8be9158912"></script>
+    <script defer type="text/javascript" src="https://cloud.umami.is/script.js" data-website-id="6022cb5a-2480-4dd3-9252-8f8be9158912" class="data-cookies"></script>
     <!-- inject css -->
 </head>
 <body>
@@ -57,6 +54,10 @@
     {/block:IfShowLandingPage}
     <header>
         <nav>
+            <label for="navigation" class="mobile-only ion-android-menu">
+                <input type="checkbox" name="navigation" id="navigation">
+                <span class="navigation__indicator"></span>
+            </label>
             <ul class="navigation-main">
                 <li class="navigation-main__first-item"><h2><a href="/">{Title}</a></h2></li>
                 {block:HasPages}
@@ -236,7 +237,7 @@
             </div><!-- end contents -->
         </div><!-- end container -->
     </main><!-- end pageWrapper -->
-    <footer id="footer"><!-- footer -->
+    <footer class="footer"><!-- footer -->
         <div class="search">
             <form action="/search" method="get">
                 <div class="form-row">
@@ -246,9 +247,22 @@
                 </div>
             </form>
         </div>
-        <div>&copy; {Title} <span class="date-wrapper"></span></div>
+        <ul class="footer__list">
+            <li>&copy; {Title} <span class="date-wrapper"></span></li>
+            <ul class="footer__list--legal">
+                <li><a href="/privacy-policy">Privacy policy</a></li>
+                <li><a href="#cookie" class="cookie-settings">Cookie settings</a></li>
+            </ul>
+        </ul>
     </footer><!-- end footer -->
-
+    <div class="cookie-wrapper"><!-- cookie wrapper -->
+        <span>This website uses cookies. We use cookies for purely analytical purposes.</span>
+        <ul class="cookie-wrapper__list">
+            <li><a href="/privacy-policy">Privacy policy</a></li>
+            <li><a href="#decline-cookies" class="decline-cookies">Decline cookies</a></li>
+            <li><a href="#accept-cookies" class="accept-cookies">Accept cookies</a></li>
+        </ul>
+    </div><!-- end cookie wrapper -->
     <!-- modal -->
     <div class="modal__backdrop"></div>
     <div class="modal">

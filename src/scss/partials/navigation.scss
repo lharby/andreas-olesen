@@ -41,7 +41,9 @@ nav {
 
         > a,
         h2 > a {
-            padding: vars.$spacer-default 0;
+            @include mixin.mq(tablet) {
+                padding: vars.$spacer-default 0;
+            }
         }
     }
 

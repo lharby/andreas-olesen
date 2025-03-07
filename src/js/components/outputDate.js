@@ -6,11 +6,13 @@ https://slackwise.org.uk
 */
 
 /* date function */
+import { htmlElem } from './globals';
+
 const outputDate = () => {
-    const dateWrapper = $('.date-wrapper');
+    const dateWrapper = htmlElem.querySelector('.date-wrapper');
     let getYear = new Date();
     getYear = getYear.getFullYear();
-    dateWrapper.text(getYear);
+    dateWrapper.textContent = getYear;
 };
 
 export {

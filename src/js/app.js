@@ -10,6 +10,7 @@ import { outputDate } from './components/outputDate';
 import { attachKeyEvent } from './utils/attachKeyEvent';
 import { attachScrollEvent } from './utils/attachScrollEvent';
 import { lightbox } from './components/lightbox';
+import './components/cookieManagement';
 
 const dynamicFunctions = () => {
     lightbox();

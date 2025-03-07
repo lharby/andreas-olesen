@@ -8,18 +8,67 @@ https://slackwise.org.uk
 @use '../functions/variables' as vars;
 @use '../functions/mixins' as mixin;
 
-footer {
+.footer {
     background-color: vars.$ash-grey;
     padding: vars.$spacer-default 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: vars.$spacer-small vars.$spacer-small vars.$spacer-mid;
+    padding: vars.$spacer-small;
     font-size: vars.$spacer-mid;
 
     @include mixin.mq(tablet) {
         flex-direction: unset;
-        padding: vars.$spacer-mid vars.$spacer-mid vars.$spacer-mid * 3;
+        padding: vars.$spacer-mid;
+    }
+
+    &__list {
+        @include mixin.mq(tablet) {
+            text-align: right;
+        }
+
+        &--legal {
+            display: flex;
+            font-size: 0.9rem;
+            margin-top: vars.$spacer-small;
+
+            li {
+                a {
+                    margin: 0 vars.$spacer-small;
+                    border-bottom: 1px solid vars.$mid-grey--light;
+                    color: vars.$mid-grey--light;
+                    
+                    &:hover {
+                        border-bottom: 1px solid transparent;
+                    }
+                }
+
+                &:not(:last-child) {
+                    &:after {
+                        content: '|';
+                        color: vars.$mid-grey;
+                    }
+                }
+
+                &:first-child {
+                    a {
+                        margin-left: 0;
+
+                        @include mixin.mq(tablet) {
+                            margin-left: vars.$spacer-small;;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    a {
+                        @include mixin.mq(tablet) {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
     }
     
     .search {

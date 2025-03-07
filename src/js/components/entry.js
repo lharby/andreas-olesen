@@ -10,6 +10,15 @@ import { entryElem, hiddenClass, fadeInClass, fadeOutClass } from './globals';
 import { retrieveFromSessionStorage, addToSessionStorage } from '../utils/utilsStorage';
 
 const entry = () => {
+
+    // TODO
+    // remove this before go live
+    // testing only
+    const isParam = location.search.split('param=')[1]
+    if (isParam) {
+        addToSessionStorage('entry', 1);
+    }
+
     const sesstionStorageItemIsSet = retrieveFromSessionStorage('entry');
 
     if (entryElem) {
