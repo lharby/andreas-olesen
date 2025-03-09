@@ -10,6 +10,8 @@ import { htmlElem, pageWrapper, indexClass } from './globals';
 import { setLoading, removeLoading } from '../utils/ajaxLoaders';
 import { dynamicFunctions } from '../app';
 import { scrollToTop } from '../utils/scrollToTop';
+
+const navigationInput = htmlElem.querySelector('#navigation')
 let documentTitle;
 
 const router = () => {
@@ -52,6 +54,7 @@ const updateContent = input => {
     const container = doc.querySelector('#container');
     pageWrapper.appendChild(container);
     documentTitle = doc.querySelector('title').textContent;
+    navigationInput.checked = false;
 };
 
 const routerCallback = () => {

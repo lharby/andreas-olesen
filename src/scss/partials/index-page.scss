@@ -24,6 +24,10 @@ html {
             a {
                 pointer-events: none;
             }
+
+            img {
+                min-height: 100vh;
+            }
         }
 
         .navigation {

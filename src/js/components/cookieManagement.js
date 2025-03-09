@@ -35,7 +35,7 @@ document.addEventListener('click', (event) => {
         event.preventDefault();
         hideCookieWrapper();
         acceptCookies();
-        setCookie('cookie-accept', 1);
+        setCookie('cookie-accept', 1, 365);
     }
 });
 

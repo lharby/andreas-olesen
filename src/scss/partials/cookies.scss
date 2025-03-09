@@ -30,13 +30,23 @@ https://slackwise.org.uk
     &__list {
         display: flex;
         flex-direction: column;
+        margin-top: vars.$spacer-small;
 
         @include mixin.mq(desktop) {
             flex-direction: unset;
+            margin-top: 0;
         }
 
-        li:not(:last-child) {
-            margin-right: vars.$spacer-mid;
+        li {
+            margin-bottom: vars.$spacer-small; 
+
+            @include mixin.mq(desktop) {
+                margin-bottom: 0; 
+            }
+
+            &:not(:last-child) {
+                margin-right: vars.$spacer-mid;
+            }
         }
 
         a {

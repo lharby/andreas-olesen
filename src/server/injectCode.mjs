@@ -41,7 +41,6 @@ const removeFile = () => {
         if (err) {
             console.log(`Error deleting file ${err}`);
         }
-        console.log(`File to remove from cleanup: ${fileToRemove}`);
+        console.log(`Success! Removed ${fileToRemove}`);
     });
-    // process.exit(0);
 };

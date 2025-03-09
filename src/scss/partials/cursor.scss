@@ -15,4 +15,8 @@ https://slackwise.org.uk
     position: fixed;
     width: 20px;
     z-index: vars.$z-index-10 + 2;
+
+    @media (hover: none) {
+        display: none;
+    }
 }

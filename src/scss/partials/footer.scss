@@ -13,9 +13,10 @@ https://slackwise.org.uk
     padding: vars.$spacer-default 0;
     display: flex;
     flex-direction: column;
+    font-size: vars.$spacer-mid;
     justify-content: flex-end;
     padding: vars.$spacer-small;
-    font-size: vars.$spacer-mid;
+    width: 100%;
 
     @include mixin.mq(tablet) {
         flex-direction: unset;
