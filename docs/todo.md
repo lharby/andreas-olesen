@@ -65,7 +65,7 @@
 - Update page title? - PENDING
 - Use css variable for nav height (and then update dynamically as needed) - DONE
 - Landing page image in post? - DONE
-- Mobile navigation, add hamburger or tooggle. - TODO
+- Mobile navigation, add hamburger or tooggle. - DONE
    - https://bristolnewmusic.org/ 
    - https://www.nickthurston.info/
    - https://www.antonispittas.com/
@@ -82,5 +82,5 @@
 - Screenshot and describe format for work pages (work-oblique), hide from navigation. This has to be authored in 'work-navigation' file, to use in the sub-nav - DONE
 - Add folder on website to use for document links `('/public_html/documents')`
 - Test other types of media, page layout etc. 
-- Cookie consent?
+- Cookie consent? - DONE
    - https://stackoverflow.com/a/49856996/1238244
