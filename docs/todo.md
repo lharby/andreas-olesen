@@ -76,6 +76,10 @@
 - Initialise Mixpanel analytics - NO
 - Test other analytics. Umami - DONE
 
+### 20.03.25
+- Add slider - DONE
+- Add keyboard navigation in slider (next/previous)
+
 #### Questions
 - Content for index page? - DONE
 - Always show landing page? - DONE

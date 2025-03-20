@@ -59,7 +59,9 @@ https://slackwise.org.uk
         }
     }
 
-    &__close {
+    &__close,
+    &__previous,
+    &__next {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -75,16 +77,39 @@ https://slackwise.org.uk
         height: 2.5rem;
     }
 
+    &__previous,
+    &__next {
+        display: none;
+        top: calc(50% - 2.5rem);
+
+        @include mixin.mq(mobile) {
+            display: flex;
+        }
+    }
+
+    &__previous {
+        left: vars.$spacer-small;
+    }
+      
+    &__next {
+        right: vars.$spacer-small;
+    }
+
     &__inner {
         display: contents;
 
         img {
             max-width: 100%;
             max-height: 100%;
+            opacity: 0;
             padding: vars.$spacer-mid;
 
             @include mixin.mq(mobile) {
                 padding: vars.$spacer-default * 2;
+            }
+
+            &.fade-in {
+                opacity: 1;
             }
         }
     }
