@@ -21,6 +21,7 @@ const lightbox = () => {
     const closeClass = modal + '__close';
     const previousClass = modal + '__previous'
     const nextClass = modal + '__next';
+    let isModalOpen = false;
     let currentIndex = 0;
     let arrImages = [];
 
@@ -75,12 +76,24 @@ const lightbox = () => {
     });
 
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && modalElem.classList.contains(modal + '--show')) {
+        if (!isModalOpen) {
+            return;
+        }
+        if (event.key === 'Escape') {
             closeModal();
+        } 
+        if (event.key === 'ArrowLeft') {
+            getPreviousImage();
+        }
+        if (event.key === 'ArrowRight') {
+            getNextImage();
         }
     });
 
     const getPreviousImage = () => {
+        if (!isModalOpen) {
+            return;
+        }
         if (currentIndex === 0) {
             currentIndex = arrImages.length - 1;
         } else {
@@ -90,6 +103,9 @@ const lightbox = () => {
     }
 
     const getNextImage = () => {
+        if (!isModalOpen) {
+            return;
+        }
         if (currentIndex === arrImages.length -1) {
             currentIndex = 0;
         } else {
@@ -99,11 +115,13 @@ const lightbox = () => {
     }
 
     const openModal = () => {
+        isModalOpen = true;
         modalBackdrop.classList.add(modal + '__backdrop--show');
         modalElem.classList.add(modal + '--show');
     }
 
     const closeModal = () => {
+        isModalOpen = false;
         modalBackdrop.classList.remove(modal + '__backdrop--show');
         modalElem.classList.remove(modal + '--show');
         modalInner.replaceChildren();

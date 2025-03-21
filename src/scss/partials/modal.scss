@@ -51,7 +51,7 @@ https://slackwise.org.uk
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: color.change(vars.$black, $alpha: 0.875);
+        background-color: color.change(vars.$black, $alpha: 0.9);
         z-index: vars.$z-index-10;
 
         &--show {
@@ -80,7 +80,12 @@ https://slackwise.org.uk
     &__previous,
     &__next {
         display: none;
+        font-size: 2.25rem;
         top: calc(50% - 2.5rem);
+
+        &:before {
+            opacity: 0.8;
+        }
 
         @include mixin.mq(mobile) {
             display: flex;

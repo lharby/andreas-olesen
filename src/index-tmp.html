@@ -252,7 +252,9 @@
                 <div class="form-row">
                     <input type="text" name="q" value="{SearchQuery}" class="search-input" />
                     <input type="submit" value="" class="submit" />
-                    <a href="#" class="ion-ios-search"></a>
+                    <a href="#" class="ion-ios-search">
+                        <span class="hidden">Search</span>
+                    </a>
                 </div>
             </form>
         </div>
@@ -275,9 +277,15 @@
     <!-- modal -->
     <div class="modal__backdrop"></div>
     <div class="modal">
-        <button class="modal__close ion-ios-close-empty"></button>
-        <button class="modal__previous ion-ios-arrow-left"></button>
-        <button class="modal__next ion-ios-arrow-right"></button>
+        <button class="modal__close ion-ios-close-empty">
+            <span class="hidden">Close modal</span>
+        </button>
+        <button class="modal__previous ion-ios-arrow-left">
+            <span class="hidden">Previous image</span>
+        </button>
+        <button class="modal__next ion-ios-arrow-right">
+            <span class="hidden">Next image</span>
+        </button>
         <div class="modal__inner"></div>
     </div>
 

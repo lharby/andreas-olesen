@@ -78,7 +78,9 @@
 
 ### 20.03.25
 - Add slider - DONE
-- Add keyboard navigation in slider (next/previous)
+- Add keyboard navigation in slider (next/previous) - DONE
+- Only trigger lightbox functions when lightbox is open - DONE
+- Add util class to hide text in empty buttons/links - DONE
 
 #### Questions
 - Content for index page? - DONE
