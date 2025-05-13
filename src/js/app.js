@@ -5,7 +5,7 @@ import { indexPage } from './components/indexPage';
 import { indexPageContent } from './components/indexPageContent';
 import { workNavigation } from './components/workNavigation';
 import { cursor } from './utils/cursor';
-import { getNavHeight } from './utils/getCSSProperties';
+import { getNavHeight, getFooterHeight } from './utils/getCSSProperties';
 import { outputDate } from './components/outputDate';
 import { attachKeyEvent } from './utils/attachKeyEvent';
 import { attachScrollEvent } from './utils/attachScrollEvent';
@@ -24,6 +24,7 @@ const staticFunctions = () => {
     workNavigation();
     cursor();
     getNavHeight();
+    getFooterHeight();
     outputDate();
     attachKeyEvent();
     attachScrollEvent();
@@ -32,6 +33,16 @@ const staticFunctions = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     staticFunctions();
+});
+
+window.addEventListener('resize', () => {
+    getNavHeight();
+    getFooterHeight();
+});
+
+screen.orientation.addEventListener('change', () => {
+    getNavHeight();
+    getFooterHeight();
 });
 
 export {

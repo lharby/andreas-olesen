@@ -5,6 +5,8 @@ https://slackwise.org.uk
 2012 - present
 */
 
+@use '../functions/mixins' as mixin;
+
 .hidden {
     display: none !important;
 }
@@ -24,4 +26,9 @@ https://slackwise.org.uk
 
 .uppercase {
     text-transform: uppercase;
+}
+
+div:not(.cursor),
+p {
+    @include mixin.emptyContent;
 }

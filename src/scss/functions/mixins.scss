@@ -42,3 +42,34 @@ $breakpoints: (
 @mixin selection {
     ::selection { @content; }
 }
+
+@mixin emptyContent {
+    &:empty {
+        display: none;
+        padding: 0;
+        margin: 0;
+
+        &:before,
+        &:after {
+            content: "";
+            display: none;
+        }
+    }
+}
+
+@mixin hiddenContent {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    white-space: nowrap;
+}
+
+@mixin hiddenFontSize {
+    font-size: 0;
+}

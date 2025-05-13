@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
     <!-- DEFAULT COLORS -->
     <meta name="text:Disqus Shortname" content="" />
+    <meta name="text:Entry Subtitle" content="" />
     <meta name="color:Background" content="#eeeeee"/>
     <meta name="color:Content Background" content="#ffffff"/>
     <meta name="color:Description Background" content="#eeeeee"/>
@@ -34,6 +35,7 @@
     <meta name="color:Visited Hyperlink" content="#582525"/>
     <meta name="color:Mobile Navigation Open" content="#199376"/>
     <meta name="if:Show Landing Page" content="1" />
+
     <!-- END DEFAULT COLORS -->
 
     <!-- CSS -->
@@ -47,19 +49,24 @@
      </style>
     <!-- ANALYTICS -->
     <script defer type="text/javascript" src="https://cloud.umami.is/script.js" data-website-id="6022cb5a-2480-4dd3-9252-8f8be9158912" class="data-cookies"></script>
-    <!-- inject css -->
+    <!-- INJECT CSS -->
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.15.1/dist/system.min.js"></script>
 </head>
 <body>
     <div class="cursor"></div>
     {block:IfShowLandingPage}
     <a href="/" class="entry hidden">
         <h1 class="uppercase">{Title}</h1>
-        <p>New site coming soon</p>
+        {block:IfEntrySubtitle}
+        <p>{text:Entry Subtitle}</p>
+        {/block:IfEntrySubtitle}
     </a>
     {/block:IfShowLandingPage}
     <header>
         <nav>
             <label for="navigation" class="mobile-only navigation-menu">
+                Navigation toggle
                 <input type="checkbox" name="navigation" id="navigation" class="hidden">
                 <span class="navigation__indicator"></span>
             </label>

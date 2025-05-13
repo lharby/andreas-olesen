@@ -82,6 +82,11 @@
 - Only trigger lightbox functions when lightbox is open - DONE
 - Add util class to hide text in empty buttons/links - DONE
 
+### 10.05.25
+- create calc css function to make page height 100% (include footer height) - DONE
+- Add js css method in order to update css variables - DONE
+- Convert entry subtitle to variable - DONE
+
 #### Questions
 - Content for index page? - DONE
 - Always show landing page? - DONE

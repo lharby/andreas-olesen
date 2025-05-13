@@ -13,6 +13,10 @@ https://slackwise.org.uk
     cursor: none;
 }
 
+@view-transition {
+	navigation: auto;
+}
+
 body {
     font-family: vars.$primary-font;
     font-size: vars.$spacer-mid;
@@ -51,7 +55,7 @@ main img {
 }
 
 #pageWrapper {
-    min-height: 100vh;
+    min-height: calc(100vh - var(--nav-height) - var(--footer-height));
     padding: vars.$spacer-small;
 
     @include mixin.mq(tablet) {
@@ -74,7 +78,6 @@ main img {
     width: 100%;
 
     @include mixin.mq(tablet) {
-        min-height: 90vh;
         width: 85%;
     }
 

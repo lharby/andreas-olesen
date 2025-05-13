@@ -7,7 +7,6 @@ https://slackwise.org.uk
 
 import { htmlElem } from "../components/globals";
 
-/* nav height function */
 const getNavHeight = () => {
     const elem = htmlElem.querySelector('header');
     return document.documentElement.style.setProperty(
@@ -16,6 +15,15 @@ const getNavHeight = () => {
     );
 };
 
+const getFooterHeight = () => {
+    const elem = htmlElem.querySelector('footer');
+    return document.documentElement.style.setProperty(
+        '--footer-height',
+        elem.clientHeight + 'px'
+    );
+}
+
 export {
-    getNavHeight
+    getNavHeight,
+    getFooterHeight
 }
